@@ -3,8 +3,8 @@ import Image from 'next/image'
 import styles from './layout.module.styl'
 
 export const metadata: Metadata = {
-  title: 'React App',
-  description: 'Web site created using Next.js',
+  title: 'Sandy Paths',
+  description: 'Find the best paths for your next Beach Adventure',
 }
 
 export default function RootLayout({
