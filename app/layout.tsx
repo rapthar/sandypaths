@@ -21,16 +21,18 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={inter.className}>
+      <body>
         <header className={styles.header}>
-          <Image
-            src="/logo.png"
-            alt="Site Logo"
-            width={150}
-            height={50}
-            priority
-            className={styles.logo}
-          />
+          <a href="/">
+            <Image
+              src="/logo.png"
+              alt="Site Logo"
+              width={150}
+              height={50}
+              priority
+              className={styles.logo}
+            />
+          </a>
         </header>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">{children}</div>
