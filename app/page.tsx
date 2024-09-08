@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './Home.module.styl'
+import styles from './page.module.styl'
 
 export default function Home() {
   return (
