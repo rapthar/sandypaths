@@ -31,12 +31,10 @@ export default function RootLayout({
               height={50}
               priority
               className={styles.logo}
-              onError={() => console.error('Error loading logo')}
-              onLoad={() => console.log('Logo loaded successfully')}
             />
           </a>
         </header>
-        <div id="root">{children}</div>
+        {children}
       </body>
     </html>
   )
