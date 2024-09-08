@@ -6,6 +6,9 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Signin from "./Signin";
 import { useEffect, useState } from "react";
 
+// Import the logo directly
+import sandyPathLogo from '../images/sandypathlogo.png';
+
 function Navbar() {
     const [isscroll, setisscroll] = useState(false);
     function isScrolling() {
@@ -28,7 +31,15 @@ function Navbar() {
         <Box w="full" boxShadow={isscroll ? 'md' : "sm"} position="fixed" bg="white" zIndex={1} p="3px 0px">
             <Box h="60px" w="85%" m="auto" display="flex" alignItems="center" justifyContent="space-between">
                 <Link href="/">
-                    <Image boxSize='190px' src="/images/sandypathlogo.png" alt="logo" />
+                    <Image 
+                        boxSize='190px' 
+                        src={sandyPathLogo} 
+                        alt="Sandy Path logo" 
+                        onError={(e) => {
+                            console.error('Error loading logo:', e)
+                            e.target.src = '/fallback-logo.png' // Provide a fallback logo
+                        }}
+                    />
                 </Link>
                 <Box display="flex" gap="25px" alignItems="center">
                     <Link display="flex">
