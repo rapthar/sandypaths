@@ -30,7 +30,7 @@ function Navbar(){
     return <Box w="full" boxShadow={ isscroll? 'md' : "sm"} position="fixed" bg="white" zIndex={1}  p="3px 0px">
             <Box h="60px" w="85%" m="auto" display="flex" alignItems="center" justifyContent="space-between">
             <Link to="/">
-            <Image boxSize='190px' src="@logo.png" alt="logo" />
+            <Image boxSize='190px' src="/sandypathlogo.png" alt="logo" />
             </Link>
             <Box display="flex" gap="25px" alignItems="center">
                 <Link display="flex">
