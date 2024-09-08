@@ -6,9 +6,6 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Signin from "./Signin";
 import { useEffect, useState } from "react";
 
-// Import the logo directly
-import sandyPathLogo from '../images/sandypathlogo.png';
-
 function Navbar() {
     const [isscroll, setisscroll] = useState(false);
     function isScrolling() {
@@ -33,7 +30,7 @@ function Navbar() {
                 <Link href="/">
                     <Image 
                         boxSize='190px' 
-                        src={sandyPathLogo} 
+                        src="/sandypathlogo.png" 
                         alt="Sandy Path logo" 
                         onError={(e) => {
                             console.error('Error loading logo:', e)
