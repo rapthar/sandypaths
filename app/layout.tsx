@@ -26,11 +26,13 @@ export default function RootLayout({
           <a href="/">
             <Image
               src="/logo.png"
-              alt="Site Logo"
+              alt="Sandy Paths Logo"
               width={150}
               height={50}
               priority
               className={styles.logo}
+              onError={() => console.error('Error loading logo')}
+              onLoad={() => console.log('Logo loaded successfully')}
             />
           </a>
         </header>
