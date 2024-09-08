@@ -27,10 +27,9 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "typescript": "^5.2.2",
-    "@zeit/next-stylus": "^1.0.1",
-    "stylus": "^0.54.8",
-    "style-loader": "^2.0.0",
-    "css-loader": "^5.2.7",
-    "stylus-loader": "^5.0.0"
+    "stylus": "^0.59.0",
+    "style-loader": "^3.3.3",
+    "css-loader": "^6.8.1",
+    "stylus-loader": "^7.1.3"
   }
 }
