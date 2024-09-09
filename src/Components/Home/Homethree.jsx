@@ -1,15 +1,54 @@
-import { Text, Box, Button, Image } from "@chakra-ui/react";
+import React, { useState } from 'react';
 
+const SubscribeForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
-function Homethree(){
-    return <Box w="85%" m="auto" mt="80px" display="flex" justifyContent="space-between" bg="#FAF1ED" >
-        <Box textAlign="left" p="5px 20px">
-            <Text fontWeight="600" mt="30px" fontSize='2xl'>Get out there</Text>
-            <Text fontWeight="400" fontSize='md'>Best of the  Best tours, attractions & activities you won't want to miss.</Text>
-            <Button mt="40px" fontWeight="700" color="white" bg="black" rounded="25px" p="23px 23px" >See the list</Button>
-        </Box>
-        <Image w="40%" h="200px" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f7/1d/4d/caption.jpg?w=1000&h=-1&s=1" alt="img" />
-    </Box>
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log('Submitted:', { name, email });
+  };
 
-export default Homethree;
+  return (
+    <div className="relative w-full h-48 bg-gray-800 rounded-lg overflow-hidden">
+      <img
+        src="/api/placeholder/1200/300"
+        alt="Food background"
+        className="w-full h-full object-cover opacity-50"
+      />
+      <div className="absolute inset-0 flex items-center justify-between px-6">
+        <div className="text-white">
+          <h2 className="text-3xl font-bold">Subscribe</h2>
+          <p className="text-xl">&amp; Stay updated</p>
+        </div>
+        <form onSubmit={handleSubmit} className="flex space-x-2">
+          <input
+            type="text"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+          <div className="relative">
+            <input
+              type="email"
+              placeholder="Your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 pr-24"
+            />
+            <button
+              type="submit"
+              className="absolute right-0 top-0 bottom-0 bg-green-500 text-white px-4 rounded-full font-semibold hover:bg-green-600 transition-colors"
+            >
+              SUBSCRIBE
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default SubscribeForm;
