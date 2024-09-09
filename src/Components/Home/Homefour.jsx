@@ -90,7 +90,7 @@ const PlaceCard = ({ place }) => (
     <Box position="relative">
       <Image src={place.image} alt={place.title} objectFit="cover" h="200px" w="100%" />
       <Box position="absolute" top="2" left="2" bg="white" borderRadius="full" p="1">
-        <Image src="/img/private.jpg" alt={place.category} boxSize="24px" />
+        <Image src="/img/private.png" alt={place.category} boxSize="24px" />
       </Box>
       <Button position="absolute" top="2" right="2" color="white" variant="unstyled">
         <Icon as={Bookmark} boxSize="24px" />
