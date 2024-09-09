@@ -5,7 +5,7 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Signin from "./Signin";
 import { useEffect, useState } from "react";
-
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 function Navbar(){
 
@@ -58,9 +58,9 @@ function Navbar(){
                     }}>Sanghamitra</Button> : <Signin />
                 }
                 </Link>
-                <Link display="flex">
-                    <ShoppingCartOutlinedIcon />
-                    <Text fontWeight="500" fontSize='md'>Basket</Text>
+                <Link display="flex" alignItems="center">
+                    <PersonOutlineOutlinedIcon />
+                    <Text fontWeight="500" fontSize='md' ml={1}>Dashboard</Text>
                 </Link>
             </Box>
         </Box>
