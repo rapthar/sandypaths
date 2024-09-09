@@ -2,7 +2,7 @@ import { Text, Box, Button, Image } from "@chakra-ui/react";
 
 function Homethree(){
     return (
-        <Box mb="40px">
+        <Box mb="81px">
             <Box w="85%" m="auto" mt="80px" display="flex" justifyContent="space-between" bg="#FAF1ED" >
                 <Box textAlign="left" p="5px 20px">
                     <Text fontWeight="600" mt="30px" fontSize='2xl'>Beach Your Expectations</Text>
