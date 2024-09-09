@@ -3,7 +3,7 @@ import { Box, Heading, Text, Grid, GridItem, Image } from "@chakra-ui/react"
 
 const categories = [
   { title: 'Family Friendly', places: 8, color: 'blue.200' },
-  { title: 'Hidden Gem', places: 6, color: 'blue.400', image: '/hidden gem.jpg' },
+  { title: 'Hidden Gem', places: 6, color: 'blue.400', image: '/img/hidden gem.jpg' },
   { title: 'Tropical', places: 8, color: 'red.300' },
   { title: 'Romantic', places: 5, color: 'yellow.300' },
 ]
