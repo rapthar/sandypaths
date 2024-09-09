@@ -33,7 +33,7 @@ function Navbar(){
             <Image
                 src="/sandypathlogo.png"
                 alt="SandyPaths.com"
-                height="50px"
+                height="45px"
                 width="auto"
                 objectFit="contain"
             />
