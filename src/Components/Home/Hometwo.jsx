@@ -4,7 +4,7 @@ import { Box, Heading, Text, Grid, GridItem, Image } from "@chakra-ui/react"
 const categories = [
   { title: 'Family Friendly', places: 8, color: 'blue.200', image: '/img/family-friendly.jpg' },
   { title: 'Hidden Gem', places: 6, color: 'blue.400', image: '/img/hidden-gem.jpg' },
-  { title: 'Tropical', places: 8, color: 'red.300', image: '/img/tropical.jpg' },
+  { title: 'Tropical', places: 8, color: 'red.300', image: '/img/Tropical.jpg' },
   { title: 'Romantic', places: 5, color: 'yellow.300', image: '/img/romantic.jpg' },
 ]
 
@@ -16,7 +16,7 @@ const CategoryCard = ({ title, places, color, image }) => (
     position="relative" 
     overflow="hidden"
     w="267px"
-    h="416px"
+    h="269px"
   >
     {image && (
       <Image
@@ -29,11 +29,11 @@ const CategoryCard = ({ title, places, color, image }) => (
     )}
     <Box 
       position="absolute" 
-      bottom="30px" 
+      bottom="0" 
       left="0" 
       right="0" 
       p={4}
-      bg="rgba(0, 0, 0, 0.5)"
+      bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0))"
       zIndex="1"
     >
       <Heading as="h3" size="md" fontWeight="bold" mb={1}>
