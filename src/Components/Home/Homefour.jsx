@@ -86,34 +86,31 @@ const places = [
 ]
 
 const PlaceCard = ({ place }) => (
-  <Box bg="white" borderRadius="lg" overflow="hidden" boxShadow="md">
+  <Box bg="white" borderRadius="lg" overflow="hidden" boxShadow="md" maxW="280px">
     <Box position="relative">
-      <Image src={place.image} alt={place.title} objectFit="cover" h="200px" w="100%" />
+      <Image src={place.image} alt={place.title} objectFit="cover" h="160px" w="100%" />
       <Box position="absolute" top="2" left="2" bg="white" borderRadius="full" p="1">
-        <Image src="/img/private.png" alt={place.category} boxSize="24px" />
+        <Image src="/img/private.png" alt={place.category} boxSize="20px" />
       </Box>
-      <Button position="absolute" top="2" right="2" color="white" variant="unstyled">
-        <Icon as={Bookmark} boxSize="24px" />
+      <Button position="absolute" top="2" right="2" color="white" variant="unstyled" size="sm">
+        <Icon as={Bookmark} boxSize="20px" />
       </Button>
     </Box>
-    <Box p="4">
-      <Text fontSize="sm" color="gray.600" textAlign="left">{place.location}</Text>
-      <Text fontWeight="bold" fontSize="lg" mt="1" textAlign="left">{place.title}</Text>
-      <Flex alignItems="flex-start" mt="2" fontSize="sm" color="gray.600">
-        <Icon as={MapPin} boxSize="16px" mr="1" mt="1" />
-        <Text textAlign="left">{place.address}</Text>
+    <Box p="3">
+      <Text fontSize="xs" color="gray.600">{place.location}</Text>
+      <Text fontWeight="bold" fontSize="md" mt="1" noOfLines={1}>{place.title}</Text>
+      <Flex alignItems="flex-start" mt="1" fontSize="xs" color="gray.600">
+        <Icon as={MapPin} boxSize="12px" mr="1" mt="1" />
+        <Text noOfLines={1}>{place.address}</Text>
       </Flex>
       <Flex justifyContent="space-between" alignItems="center" mt="2">
         <Flex alignItems="center">
-          <Icon as={Star} boxSize="16px" color={place.rating >= 4 ? "yellow.400" : "gray.400"} />
-          <Text ml="1" color={place.rating >= 4 ? "yellow.600" : "gray.600"}>
-            {place.rating.toFixed(1)}
-          </Text>
-          <Text color="gray.600" ml="1">
-            ({place.reviews} {place.reviews === 1 ? 'review' : 'reviews'})
+          <Icon as={Star} boxSize="12px" color={place.rating >= 4 ? "yellow.400" : "gray.400"} />
+          <Text ml="1" fontSize="xs" color={place.rating >= 4 ? "yellow.600" : "gray.600"}>
+            {place.rating.toFixed(1)} ({place.reviews})
           </Text>
         </Flex>
-        <Text color="gray.600">{place.price}</Text>
+        <Text color="gray.600" fontSize="xs">{place.price}</Text>
       </Flex>
     </Box>
   </Box>
