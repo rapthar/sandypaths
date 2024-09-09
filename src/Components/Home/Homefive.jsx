@@ -1,44 +1,53 @@
-import { Box, Image, Text } from "@chakra-ui/react";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import React, { useState } from 'react';
 
+const countries = [
+    { name: 'France', places: 15, image: '/img/private.jpg' },
+    { name: 'Italy', places: 14, image: '/img/mix-beach.jpg' },
+    { name: 'Spain', places: 13, image: '/img/romantic.jpg' },
+    { name: 'Greece', places: 12, image: '/img/Tropical.jpg' },
+  ];
 
-function Homefive(){
+const CountryCard = ({ country }) => (
+  <div className="relative rounded-xl overflow-hidden group">
+    <img src={country.image} alt={country.name} className="w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+    <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm font-semibold">
+      EUROPE
+    </div>
+    <div className="absolute bottom-4 left-4 text-white">
+      <h3 className="text-2xl font-bold">{country.name}</h3>
+      <p className="text-sm">{country.places} places</p>
+    </div>
+  </div>
+);
 
-    const data= [
-        {
-            id: 1,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/ab/94/ba/2de5214a-d5dc-42d2.jpg?w=400&h=-1&s=1",
-            title: "5 Beautiful hill stations in south India"
-        },
-        {
-            id: 2,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/c8/20/d4/45276d36-cc36-4a32.jpg?w=400&h=-1&s=1",
-            title: "11 Beautiful places in India that have to be seen to be believed"
-        },
-        {
-            id: 3,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/c8/2e/9a/2520956e-5665-4e9f.jpg?w=400&h=-1&s=1",
-            title: "Best time to visit Dubai for great weather and deals"
-        }
-    ]
+const PopularCountries = () => {
+  const [currentPage, setCurrentPage] = useState(0);
 
-    return <Box bg="#FAF1ED" p="5px 0px" mt="40px" pb="35px">
-            <Box w="85%" m="auto" textAlign="left" mt="40px">
-            <Text fontWeight="600" fontSize='2xl'>More to Explore</Text>
-            <Box display="grid" justifyContent="space-between" gridTemplateColumns="repeat(3, 1fr)" gap="15px" mt="15px">
-                {data && data.map((el)=>{
-                    return <Box bg="white" pb="30px" position="relative" textAlign="center" key={el.id}>
-                        <Image src={el.img} alt="" />
-                        <Text mt="20px" fontWeight="500" fontSize='md'>From Tripadvisor</Text>
-                        <Text fontWeight="500" fontSize='lg'>{el.title}</Text>
-                        <Box p="10px" display="flex" justifyContent="center" alignItems="center" bg="white" rounded="50%" position="absolute" top="10px" right="10px">
-                            <FavoriteBorderIcon />
-                        </Box>
-                    </Box>
-                })}
-            </Box>
-        </Box>
-    </Box>
-}
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8 bg-black">
+      <h2 className="text-3xl font-bold text-center text-white mb-4">Popular Countries</h2>
+      <div className="h-0.5 w-12 bg-blue-500 mx-auto mb-8"></div>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {countries.map((country, index) => (
+          <CountryCard key={index} country={country} />
+        ))}
+      </div>
+      
+      <div className="flex justify-center mt-8 space-x-2">
+        {[0, 1].map((page) => (
+          <button
+            key={page}
+            className={`w-2 h-2 rounded-full ${
+              currentPage === page ? 'bg-red-500' : 'bg-gray-400'
+            }`}
+            onClick={() => setCurrentPage(page)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Homefive;
+export default PopularCountries;
