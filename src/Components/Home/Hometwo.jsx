@@ -54,7 +54,12 @@ function Hometwo() {
         Discover unique beach experiences
       </Text>
       <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
-      <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+      <Grid 
+        templateColumns="repeat(4, 267px)"
+        gap="48px"
+        justifyContent="center"
+        mx="auto"
+      >
         {categories.map((category, index) => (
           <GridItem key={index}>
             <CategoryCard {...category} />
