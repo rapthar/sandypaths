@@ -121,18 +121,20 @@ const PlaceCard = ({ place }) => (
 
 function Homefour() {
   return (
-    <Box maxW="6xl" mx="auto" px="4" mt="40px" bg="#F7F7F7" py="8" borderRadius="lg">
-      <Heading as="h2" size="xl" textAlign="center" mb={2}>
-        Popular Beaches
-      </Heading>
-      <Text textAlign="center" fontSize="lg" mb={4} color="gray.600">
-        Discover the most loved coastal destinations
-      </Text>
-      <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
-      <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6">
-        {places.map((place, index) => (
-          <PlaceCard key={index} place={place} />
-        ))}
+    <Box bg="#F7F7F7" w="100%" py="8">
+      <Box maxW="6xl" mx="auto" px="4">
+        <Heading as="h2" size="xl" textAlign="center" mb={2}>
+          Popular Beaches
+        </Heading>
+        <Text textAlign="center" fontSize="lg" mb={4} color="gray.600">
+          Discover the most loved coastal destinations
+        </Text>
+        <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
+        <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6">
+          {places.map((place, index) => (
+            <PlaceCard key={index} place={place} />
+          ))}
+        </Box>
       </Box>
     </Box>
   )
