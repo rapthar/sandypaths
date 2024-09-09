@@ -121,7 +121,7 @@ const PlaceCard = ({ place }) => (
 
 function Homefour() {
   return (
-    <Box maxW="6xl" mx="auto" px="4" mt="40px">
+    <Box maxW="6xl" mx="auto" px="4" mt="40px" bg="#F7F7F7" py="8" borderRadius="lg">
       <Heading as="h2" size="xl" textAlign="center" mb={2}>
         Popular Beaches
       </Heading>
