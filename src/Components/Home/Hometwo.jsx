@@ -1,64 +1,55 @@
-import { Box, Image, Text } from "@chakra-ui/react";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import React from 'react'
+import { Box, Heading, Text, Grid, GridItem, Image } from "@chakra-ui/react"
 
+const categories = [
+  { title: 'Family Friendly', places: 8, color: 'blue.200' },
+  { title: 'Hidden Gem', places: 6, color: 'blue.400', image: '/hidden gem.jpg' },
+  { title: 'Tropical', places: 8, color: 'red.300' },
+  { title: 'Romantic', places: 5, color: 'yellow.300' },
+]
 
-function Hometwo(){
-
-    const data= [
-        {
-            id: 1,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/3d/6b/0d/caption.jpg?w=300&h=300&s=1",
-            title: "Kolkata-Sounds and Sights-Private Full Day City Tour",
-            review: "32",
-            price: "from ₹4,800 per adult"
-        },
-        {
-            id: 2,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c7/d9/ea/caption.jpg?w=300&h=300&s=1",
-            title: "Private Half-Day Kolkata Tour",
-            review: "23",
-            price: "from ₹2,595 per adult"
-        },
-        {
-            id: 3,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8c/36/6b/caption.jpg?w=300&h=300&s=1",
-            title: "One Day Guided Kolkata Local Sightseeing Trip by Cab",
-            review: "5",
-            price: "from ₹6,000 per adult"
-        },
-        {
-            id: 4,
-            img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/64/42/4f/caption.jpg?w=300&h=300&s=1",
-            title: "Day trip from Kolkata to Bishnupur for Terracotta Temples and Silk",
-            review: "8",
-            price: "from ₹13,496 per adult"
-        }
-    ]
-
-    return <Box w="85%" m="auto" textAlign="left" mt="40px">
-        <Text fontWeight="600" fontSize='2xl'>Ways to tour Kolkata (Calcutta)</Text>
-        <Text fontSize='md'>Book these experiences for a close-up look at Kolkata (Calcutta).</Text>
-        <Box display="grid" justifyContent="space-between" gridTemplateColumns="repeat(4, 1fr)" gap="15px" mt="15px">
-            {data && data.map((el)=>{
-                return <Box position="relative" key={el.id}>
-                    <Image src={el.img} alt="" />
-                    <Text fontWeight="600" fontSize='lg'>{el.title}</Text>
-                    <Box w="90px" display="flex" gap="2px" alignItems="center">
-                        <Box boxSize="12px" bg="green.400" rounded="50%" border="none"></Box>
-                        <Box boxSize="12px" bg="green.400" rounded="50%" border="none"></Box>
-                        <Box boxSize="12px" bg="green.400" rounded="50%" border="none"></Box>
-                        <Box boxSize="12px" bg="green.400" rounded="50%" border="none"></Box>
-                        <Box boxSize="12px" bg="green.400" rounded="50%" border="none"></Box>
-                        <Text fontSize='sm' ml='5px'>{el.review}</Text>
-                    </Box>
-                    <Text fontWeight="500" fontSize='md'>{el.price}</Text>
-                    <Box p="10px" display="flex" justifyContent="center" alignItems="center" bg="white" rounded="50%" position="absolute" top="10px" right="10px">
-                        <FavoriteBorderIcon />
-                    </Box>
-                </Box>
-            })}
-        </Box>
+const CategoryCard = ({ title, places, color, image }) => (
+  <Box bg={color} p={4} borderRadius="lg" color="white" position="relative" overflow="hidden">
+    {image && (
+      <Image
+        src={image}
+        alt={title}
+        objectFit="cover"
+        position="absolute"
+        top="0"
+        left="0"
+        w="100%"
+        h="100%"
+      />
+    )}
+    <Box position="relative" zIndex="1">
+      <Heading as="h3" size="md" fontWeight="bold">
+        {title}
+      </Heading>
+      <Text>{places} places</Text>
     </Box>
+  </Box>
+)
+
+function Hometwo() {
+  return (
+    <Box maxW="4xl" mx="auto" mt="40px">
+      <Heading as="h2" size="xl" textAlign="center" mb={2}>
+        Explore by
+      </Heading>
+      <Text textAlign="center" fontSize="lg" mb={4} color="gray.600">
+        Discover unique beach experiences
+      </Text>
+      <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
+      <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+        {categories.map((category, index) => (
+          <GridItem key={index}>
+            <CategoryCard {...category} />
+          </GridItem>
+        ))}
+      </Grid>
+    </Box>
+  )
 }
 
-export default Hometwo;
+export default Hometwo
