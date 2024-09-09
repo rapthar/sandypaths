@@ -45,7 +45,7 @@ function Navbar(){
                 </Link>
                 <Link display="flex">
                     <FavoriteBorderOutlinedIcon />
-                    <Text fontWeight="500" fontSize='md'>Trips</Text>
+                    <Text fontWeight="500" fontSize='md'>Wishlist</Text>
                 </Link>
                 <Link display="flex">
                     <NotificationsOutlinedIcon />
