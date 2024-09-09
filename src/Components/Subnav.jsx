@@ -17,7 +17,7 @@ function SubNav(){
             <LandscapeIcon />
         </Box>
         <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 10px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
-            <Link fontSize='md'>Black Sand Beaches</Link>
+            <Link fontSize='md'>Black Sand</Link>
             <GrainIcon />
         </Box>
         <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
