@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Image, Text, Flex, Icon, Button } from "@chakra-ui/react"
+import { Box, Image, Text, Flex, Icon, Button, Heading } from "@chakra-ui/react"
 import { Star, MapPin, Bookmark } from 'lucide-react'
 
 const places = [
   {
-    image: '/api/placeholder/400/300',
+    image: '@mix-beach.jpg',
     location: 'Barrier Beaches Lyon',
     title: 'Boomtown Festival',
     address: '7 Rue Emile Duclaux, 92150 Suresnes, France',
@@ -14,7 +14,7 @@ const places = [
     category: 'Festival'
   },
   {
-    image: '/api/placeholder/400/300',
+    image: '@private.jpg',
     location: 'Lyon',
     title: 'Stay USA Hotel & Suites',
     address: '7 Rue Emile Duclaux, 92150 Suresnes, France',
@@ -24,7 +24,7 @@ const places = [
     category: 'Hotel'
   },
   {
-    image: '/api/placeholder/400/300',
+    image: '@mix-beach.jpg',
     location: 'Lyon',
     title: 'New Balance Store',
     address: '7 Rue Emile Duclaux, 92150 Suresnes, France',
@@ -34,7 +34,7 @@ const places = [
     category: 'Store'
   },
   {
-    image: '/api/placeholder/400/300',
+    image: '@private.jpg',
     location: 'Lyon',
     title: 'Lacoste Store',
     address: '7 Rue Emile Duclaux, 92150 Suresnes, France',
@@ -42,6 +42,46 @@ const places = [
     reviews: 1,
     price: '$$',
     category: 'Store'
+  },
+  {
+    image: '@mix-beach.jpg',
+    location: 'Cannes',
+    title: 'Sunset Beach Resort',
+    address: '123 Promenade de la Croisette, 06400 Cannes, France',
+    rating: 4.8,
+    reviews: 15,
+    price: '$$$',
+    category: 'Resort'
+  },
+  {
+    image: '@private.jpg',
+    location: 'Nice',
+    title: 'Azure Cove Apartments',
+    address: '456 Promenade des Anglais, 06000 Nice, France',
+    rating: 4.5,
+    reviews: 8,
+    price: '$$',
+    category: 'Apartment'
+  },
+  {
+    image: '@mix-beach.jpg',
+    location: 'Saint-Tropez',
+    title: 'Riviera Sailing Club',
+    address: '789 Quai Jean Jaurès, 83990 Saint-Tropez, France',
+    rating: 4.2,
+    reviews: 6,
+    price: '$$$$',
+    category: 'Club'
+  },
+  {
+    image: '@private.jpg',
+    location: 'Marseille',
+    title: 'Calanques Adventure Tours',
+    address: '101 Corniche Kennedy, 13007 Marseille, France',
+    rating: 4.7,
+    reviews: 12,
+    price: '$',
+    category: 'Tour'
   }
 ]
 
@@ -81,14 +121,14 @@ const PlaceCard = ({ place }) => (
 
 function Homefour() {
   return (
-    <Box maxW="6xl" mx="auto" px="4">
-      <Text fontWeight="bold" fontSize="2xl" textAlign="center" mb="4">
+    <Box maxW="6xl" mx="auto" px="4" mt="40px">
+      <Heading as="h2" size="xl" textAlign="center" mb={2}>
         Popular Beaches
-      </Text>
-      <Text fontSize="lg" textAlign="center" mb="6" color="gray.600">
+      </Heading>
+      <Text textAlign="center" fontSize="lg" mb={4} color="gray.600">
         Discover the most loved coastal destinations
       </Text>
-      <Box h="0.5px" w="12" bg="blue.500" mx="auto" mb="6"></Box>
+      <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
       <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6">
         {places.map((place, index) => (
           <PlaceCard key={index} place={place} />
