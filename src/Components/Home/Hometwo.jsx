@@ -9,21 +9,34 @@ const categories = [
 ]
 
 const CategoryCard = ({ title, places, color, image }) => (
-  <Box bg={color} p={4} borderRadius="lg" color="white" position="relative" overflow="hidden">
+  <Box 
+    bg={color} 
+    borderRadius="lg" 
+    color="white" 
+    position="relative" 
+    overflow="hidden"
+    w="267px"
+    h="416px"
+  >
     {image && (
       <Image
         src={image}
         alt={title}
         objectFit="cover"
-        position="absolute"
-        top="0"
-        left="0"
         w="100%"
         h="100%"
       />
     )}
-    <Box position="relative" zIndex="1">
-      <Heading as="h3" size="md" fontWeight="bold">
+    <Box 
+      position="absolute" 
+      bottom="30px" 
+      left="0" 
+      right="0" 
+      p={4}
+      bg="rgba(0, 0, 0, 0.5)"
+      zIndex="1"
+    >
+      <Heading as="h3" size="md" fontWeight="bold" mb={1}>
         {title}
       </Heading>
       <Text>{places} places</Text>
