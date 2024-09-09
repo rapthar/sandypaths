@@ -2,10 +2,10 @@ import React from 'react'
 import { Box, Heading, Text, Grid, GridItem, Image } from "@chakra-ui/react"
 
 const categories = [
-  { title: 'Family Friendly', places: 8, color: 'blue.200', image: '/img/family-friendly.jpg' },
-  { title: 'Hidden Gem', places: 6, color: 'blue.400', image: '/img/hidden-gem.jpg' },
-  { title: 'Tropical', places: 8, color: 'red.300', image: '/img/tropical.jpg' },
-  { title: 'Romantic', places: 5, color: 'yellow.300', image: '/img/romantic.jpg' },
+  { title: 'Family Friendly', places: 8, color: 'blue.200', image: '@img/family-friendly.jpg' },
+  { title: 'Hidden Gem', places: 6, color: 'blue.400', image: '@img/hidden-gem.jpg' },
+  { title: 'Tropical', places: 8, color: 'red.300', image: '@img/tropical.jpg' },
+  { title: 'Romantic', places: 5, color: 'yellow.300', image: '@img/romantic.jpg' },
 ]
 
 const CategoryCard = ({ title, places, color, image }) => (
