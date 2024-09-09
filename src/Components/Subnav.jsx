@@ -12,27 +12,27 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 function SubNav(){
     return <Box h="100px" w="85%" m="auto" pt="100px" mb="80px" display="grid" gridTemplateColumns="repeat(6, 1fr)" alignItems="center" gap="15px">
-        <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
-            <Link fontSize='md'>Barrier Beach</Link>
+        <Box h="50px" _hover={{bg:"#193F50", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid #193F50" justifyContent="space-between" display="flex" alignItems="center">
+            <Link fontSize='md'>Barrier Beaches</Link>
             <LandscapeIcon />
         </Box>
-        <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 10px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
-            <Link fontSize='md'>Black Sand Beach</Link>
+        <Box h="50px" _hover={{bg:"#193F50", color:"white"}} borderRadius='xl' p="10px 10px" fontWeight="500" fontSize='md' border="1.5px solid #193F50" justifyContent="space-between" display="flex" alignItems="center">
+            <Link fontSize='md'>Black Sand Beaches</Link>
             <GrainIcon />
         </Box>
-        <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
-            <Link fontSize='md'>Cliff Beache</Link>
+        <Box h="50px" _hover={{bg:"#193F50", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid #193F50" justifyContent="space-between" display="flex" alignItems="center">
+            <Link fontSize='md'>Cliff Beaches</Link>
             <TerrainIcon />
         </Box>
-        <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
-            <Link>Coral Beach</Link>
+        <Box h="50px" _hover={{bg:"#193F50", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid #193F50" justifyContent="space-between" display="flex" alignItems="center">
+            <Link>Coral Beaches</Link>
             <WaterIcon />
         </Box>
-        <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 13px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
-            <Link fontSize='md'>Glass Beach</Link>
+        <Box h="50px" _hover={{bg:"#193F50", color:"white"}} borderRadius='xl' p="10px 13px" fontWeight="500" fontSize='md' border="1.5px solid #193F50" justifyContent="space-between" display="flex" alignItems="center">
+            <Link fontSize='md'>Glass Beaches</Link>
             <DiamondIcon />
         </Box>
-        <Box h="50px" _hover={{bg:"black", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid black" justifyContent="space-between" display="flex" alignItems="center">
+        <Box h="50px" _hover={{bg:"#193F50", color:"white"}} borderRadius='xl' p="10px 16px" fontWeight="500" fontSize='md' border="1.5px solid #193F50" justifyContent="space-between" display="flex" alignItems="center">
             <Menu w="100%">
                 <MenuButton w="100%" justifyContent="space-between" display="flex" gap="20px" alignItems="center">
                     <Box fontWeight="500" fontSize='md' w="100%" justifyContent="space-between" display="flex" gap="20px" alignItems="center">
@@ -40,12 +40,12 @@ function SubNav(){
                     <MoreHorizIcon /></Box>
                 </MenuButton>
                 <Portal>
-                    <MenuList color="black" w="80%" m="auto" ml="-15%" >
-                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Pebble Beach</Link></MenuItem>
-                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Pocket Beach</Link></MenuItem>
-                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Rocky Beach</Link></MenuItem>
-                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Sandy Beach</Link></MenuItem>
-                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Shell Beach</Link></MenuItem>
+                    <MenuList color="#193F50" w="80%" m="auto" ml="-15%" >
+                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Pebble Beaches</Link></MenuItem>
+                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Pocket Beaches</Link></MenuItem>
+                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Rocky Beaches</Link></MenuItem>
+                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Sandy Beaches</Link></MenuItem>
+                        <MenuItem mt="10px" fontWeight="500" fontSize='17px'><Link>Shell Beaches</Link></MenuItem>
                     </MenuList>
                 </Portal>
             </Menu>

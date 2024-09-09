@@ -20,7 +20,7 @@ function Navbar(){
     useEffect(() => {
         window.addEventListener("scroll", isScrolling);
         return () => {
-        window.removeEventListener("scroll");
+        window.removeEventListener("scroll", isScrolling);
         }
     }, [])
 
@@ -53,7 +53,7 @@ function Navbar(){
                 </Link>
                 <Link display="flex">
                     {isAuth ? 
-                    <Button color="black" onClick={()=>{
+                    <Button color="#193F50" onClick={()=>{
                         setAuth(!isAuth);
                     }}>Sanghamitra</Button> : <Signin />
                 }
