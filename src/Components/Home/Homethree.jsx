@@ -9,7 +9,7 @@ function Homethree(){
                     <Text fontWeight="400" fontSize='md'>Discover sandy paths to unforgettable coastal adventures.</Text>
                     <Button mt="40px" fontWeight="700" color="white" bg="black" rounded="25px" p="23px 23px" >Explore Shores</Button>
                 </Box>
-                <Image w="40%" h="200px" src="@/img/image-3.jpg" alt="Tropical island beach view with a woman sitting on a rock" />
+                <Image w="40%" h="200px" src="/img/image-3.jpg" alt="Tropical island beach view with a woman sitting on a rock" />
             </Box>
         </Box>
     )
