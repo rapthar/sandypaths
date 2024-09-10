@@ -10,20 +10,15 @@ const countries = [
   ];
 
   const CountryCard = ({ country }) => (
-    <Box bg="white" borderRadius="lg" overflow="hidden" boxShadow="md">
-      <Box position="relative">
-        <Image src={country.image} alt={country.name} objectFit="cover" h="200px" w="100%" />
-        <Box position="absolute" top="2" left="2" bg="white" borderRadius="full" p="1">
-          <Image src="/img/private.png" alt="Europe" boxSize="24px" />
-        </Box>
-        <Button position="absolute" top="2" right="2" color="white" variant="unstyled">
-          <Icon as={Bookmark} boxSize="24px" />
-        </Button>
+    <Box borderRadius="lg" overflow="hidden" position="relative">
+      <Image src={country.image} alt={country.name} objectFit="cover" h="100%" w="100%" />
+      <Box position="absolute" inset="0" bg="gradient-to-t from-black/70 to-transparent" />
+      <Box position="absolute" top="4" left="4" bg="white/20" backdropFilter="blur(4px)" borderRadius="full" px="3" py="1">
+        <Text fontSize="sm" fontWeight="semibold" color="white">FRANCE</Text>
       </Box>
-      <Box p="4">
-        <Text fontSize="sm" color="gray.600" textAlign="left">EUROPE</Text>
-        <Text fontWeight="bold" fontSize="lg" mt="1" textAlign="left">{country.name}</Text>
-        <Text fontSize="sm" color="gray.600" mt="2">{country.places} places</Text>
+      <Box position="absolute" bottom="4" left="4" color="white">
+        <Text fontSize="2xl" fontWeight="bold">{country.name}</Text>
+        <Text fontSize="sm">{country.places} places</Text>
       </Box>
     </Box>
   );
@@ -32,15 +27,12 @@ const countries = [
     const [currentPage, setCurrentPage] = useState(0);
   
     return (
-      <Box bg="#193F50" w="100%" pt="30px" pb="8">
+      <Box bg="black" w="100%" pt="30px" pb="8">
         <Box maxW="6xl" mx="auto" px="4">
           <Heading as="h2" size="xl" textAlign="center" mb={2} color="white">
-            Popular Countries
+            Popular Cities
           </Heading>
-          <Text textAlign="center" fontSize="lg" mb={4} color="white">
-            Explore the most sought-after destinations in Europe
-          </Text>
-          <Box h="2px" w="48px" bg="red.500" mx="auto" mb={6}></Box>
+          <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
           
           <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6">
             {countries.map((country, index) => (
@@ -48,17 +40,16 @@ const countries = [
             ))}
           </Box>
           
-          <Flex justify="center" mt="8" space="2">
+          <Flex justify="center" mt="8" gap="2">
             {[0, 1].map((page) => (
-              <Button
+              <Box
                 key={page}
                 w="2"
                 h="2"
                 borderRadius="full"
                 bg={currentPage === page ? "red.500" : "gray.400"}
                 onClick={() => setCurrentPage(page)}
-                p="0"
-                minW="0"
+                cursor="pointer"
               />
             ))}
           </Flex>
