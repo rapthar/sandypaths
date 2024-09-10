@@ -1,45 +1,54 @@
-import { Box, Image, Text, Flex, Button } from "@chakra-ui/react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
 
 function Homeseven() {
     return (
-        <Box maxW="6xl" mx="auto" px="4" pt="40px">
-            <Box position="relative" h="600px">
-                <Image
-                    src="/img/even-hotel-chongli-even.jpg"
-                    alt="Beachside Accommodation"
-                    objectFit="cover"
-                    w="100%"
-                    h="100%"
-                />
-                <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    right="0"
-                    bottom="0"
-                    bg="rgba(0,0,0,0.4)"
-                />
-                <Flex
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    right="0"
-                    bottom="0"
-                    direction="column"
-                    justify="center"
-                    align="flex-start"
+        <Box maxW="1142px" h="506px" mx="auto" mt="40px" position="relative" borderRadius="xl" overflow="hidden">
+            <Image
+                src="/img/even-hotel-chongli-even.jpg"
+                alt="IHG Hotels & Resorts"
+                objectFit="cover"
+                w="100%"
+                h="100%"
+            />
+            <Box
+                position="absolute"
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                bg="linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%)"
+            />
+            <Box
+                position="absolute"
+                top="10px"
+                left="10px"
+                bg="white"
+                px="2"
+                py="1"
+                borderRadius="sm"
+            >
+                <Text fontSize="xs" fontWeight="medium">
+                    Sponsored
+                </Text>
+            </Box>
+            <Box
+                position="absolute"
+                bottom="40px"
+                left="40px"
+                maxW="600px"
+            >
+                <Text color="white" fontSize="4xl" fontWeight="bold" mb="4" lineHeight="1.2">
+                    Explore someplace new with IHG Hotels & Resorts
+                </Text>
+                <Button 
+                    bg="white" 
+                    color="black" 
+                    _hover={{ bg: "gray.100" }} 
+                    borderRadius="full"
+                    px="6"
                 >
-                    <Text color="white" fontSize="5xl" fontWeight="bold" mb="4">
-                        Beachside Bliss
-                    </Text>
-                    <Text color="white" fontSize="xl" mb="6" maxW="600px">
-                        Experience luxury and comfort with our premium beachside accommodations. 
-                        Wake up to stunning ocean views and fall asleep to the sound of waves.
-                    </Text>
-                    <Button colorScheme="blue" size="lg">
-                        Explore Accommodations
-                    </Button>
-                </Flex>
+                    See more on Tripadvisor
+                </Button>
             </Box>
         </Box>
     );
