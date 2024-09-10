@@ -30,18 +30,20 @@ function Homesix() {
           </Box>
           <Flex 
             w="full"
-            maxW="833px" 
+            maxW="853px" // Increased by 20px to account for the added spacing
             bg="white" 
             borderRadius="full" 
             overflow="hidden"
             h="54px"
+            alignItems="center"
           >
             <Input
               placeholder="Name"
               border="none"
               _focus={{ boxShadow: "none" }}
-              w="252px"
+              w="292px"
               h="54px"
+              mr="10px" // Added right margin
             />
             <Input
               placeholder="Your email"
@@ -49,13 +51,13 @@ function Homesix() {
               _focus={{ boxShadow: "none" }}
               w="418px"
               h="54px"
+              mr="10px" // Added right margin
             />
             <Button
               colorScheme="red"
               borderRadius="full"
               w="123.29px"
               h="44px"
-              m="5px"
             >
               SUBSCRIBE
             </Button>
