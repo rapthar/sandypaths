@@ -12,9 +12,9 @@ const countries = [
   const CountryCard = ({ country }) => (
     <Box borderRadius="lg" overflow="hidden" position="relative">
       <Image src={country.image} alt={country.name} objectFit="cover" h="100%" w="100%" />
-      <Box position="absolute" inset="0" bg="gradient-to-t from-black/70 to-transparent" />
+      <Box position="absolute" inset="0" bg="linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%)" />
       <Box position="absolute" top="4" left="4" bg="white/20" backdropFilter="blur(4px)" borderRadius="full" px="3" py="1">
-        <Text fontSize="sm" fontWeight="semibold" color="white">FRANCE</Text>
+        <Text fontSize="sm" fontWeight="semibold" color="white">EUROPE</Text>
       </Box>
       <Box position="absolute" bottom="4" left="4" color="white">
         <Text fontSize="2xl" fontWeight="bold">{country.name}</Text>
