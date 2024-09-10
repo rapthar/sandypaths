@@ -36,6 +36,7 @@ function Homeseven() {
                 bottom="40px"
                 left="40px"
                 maxW="600px"
+                textAlign="left"
             >
                 <Text color="white" fontSize="4xl" fontWeight="bold" mb="4" lineHeight="1.2">
                     Explore someplace new with IHG Hotels & Resorts
