@@ -40,7 +40,7 @@ function Homesix() {
               placeholder="Name"
               border="none"
               _focus={{ boxShadow: "none" }}
-              w="292px"
+              w="252px"
               h="54px"
             />
             <Input
