@@ -48,7 +48,7 @@ function Homeseven() {
                     borderRadius="full"
                     px="6"
                 >
-                    See more on Tripadvisor
+                    See more on SandyPaths
                 </Button>
             </Box>
         </Box>
