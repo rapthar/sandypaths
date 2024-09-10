@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Image, Heading } from "@chakra-ui/react";
 
 const countries = [
     { name: 'France', places: 15, image: '/img/private.jpg' },
@@ -26,11 +26,14 @@ const PopularCountries = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 bg-black">
-      <Box textAlign="left" mb="4">
-        <Text fontWeight="600" fontSize='2xl'>Popular Countries</Text>
-      </Box>
-      <div className="h-0.5 w-12 bg-blue-500 mb-8"></div>
+    <div className="max-w-6xl mx-auto px-4 py-8" style={{ backgroundColor: '#193F50' }}>
+      <Heading as="h2" size="xl" textAlign="center" mb={2}>
+        Popular Countries
+      </Heading>
+      <Text textAlign="center" fontSize="lg" mb={4} color="gray.600">
+        Explore the most sought-after destinations in Europe
+      </Text>
+      <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {countries.map((country, index) => (
