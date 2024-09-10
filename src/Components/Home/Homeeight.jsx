@@ -1,24 +1,38 @@
-import { Box, Button, Image, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Box, Heading, Text, Flex, Image } from "@chakra-ui/react"
 
-const Homeeight = () => {
+const images = [
+  { src: '/img/family-friendly.jpg', credit: '@richardwhitetravels' },
+  { src: '/img/hidden-gem.jpg', credit: '@dominik.kobler' },
+  { src: '/img/Tropical.jpg', credit: '@pandeyrt' },
+  { src: '/img/romantic.jpg', credit: '@wanderlust_fabiana' },
+  { src: '/img/family-friendly.jpg', credit: '@unchartedbackpacker' },
+  { src: '/img/hidden-gem.jpg', credit: '@o_thessalonikios' },
+]
+
+function Homeeight() {
   return (
-    <Box w="100%" bg="#004f32">
-      <Box w="88%" m="auto" h="600px" display={["inline", "inline", "flex"]} justifyContent="space-between" alignItems="center">
-        <Box p={["20px", "20px", ""]} w={["80%", "70%", "30%"]} m={["auto", "auto", ""]}>
-            <Box>
-                <Image w="50%" m="auto" src="https://static.tacdn.com/img2/travelers_choice/TC_logomark_solid_cream.svg" alt="logo" />
-                <Box>
-                    <Text fontSize="35px" fontWeight="900" color="white">Travellers' Choice Best of the Best</Text>
-                </Box>
+    <Box bg="blue.500" w="100%" py={8}>
+      <Box maxW="6xl" mx="auto">
+        <Flex justify="space-between" align="center" mb={6}>
+          <Heading as="h2" size="2xl" color="white">
+            #lonelyplanet
+          </Heading>
+          <Flex align="center">
+            <Text color="white" mr={4}>FOLLOW LONELY PLANET:</Text>
+            {/* Add social media icons here */}
+          </Flex>
+        </Flex>
+        <Flex overflowX="auto" pb={4}>
+          {images.map((image, index) => (
+            <Box key={index} minW="300px" mr={4} position="relative">
+              <Image src={image.src} alt={`Travel image ${index + 1}`} w="300px" h="200px" objectFit="cover" />
+              <Text position="absolute" bottom={2} left={2} color="white" fontSize="sm">
+                {image.credit}
+              </Text>
             </Box>
-            <Box mt="15%">
-                <Button p="10px 20px" color="white" rounded="20px" bg="black">See the Winners</Button>
-            </Box>
-        </Box>
-        <Box>
-            <Image h={["", "", "600px"]} src="https://static.tacdn.com/img2/brand/feed/tc_cards_desktop2x.jpeg" alt="img" />
-        </Box>
+          ))}
+        </Flex>
       </Box>
     </Box>
   )
