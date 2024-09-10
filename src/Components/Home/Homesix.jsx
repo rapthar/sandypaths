@@ -4,7 +4,7 @@ function Homesix() {
   return (
     <Box
       w="100%"
-      bgImage="url('/img/subscribe-bg.jpg')"
+      bgImage="url('/img/image-3.jpg')"
       bgSize="cover"
       bgPosition="center"
       py="60px"
@@ -31,7 +31,7 @@ function Homesix() {
               borderRadius="full"
             />
             <Button
-              colorScheme="green"
+              colorScheme="red"
               size="lg"
               borderRadius="full"
               px="8"
