@@ -30,11 +30,14 @@ const countries = [
       <Box bg="black" w="100%" pt="30px" pb="8">
         <Box maxW="6xl" mx="auto" px="4">
           <Heading as="h2" size="xl" textAlign="center" mb={2} color="white">
-            Popular Cities
+            Popular Countries
           </Heading>
+          <Text textAlign="center" fontSize="lg" mb={4} color="gray.300">
+            Discover the most loved beach destinations
+          </Text>
           <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
           
-          <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6">
+          <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6" h="363px">
             {countries.map((country, index) => (
               <CountryCard key={index} country={country} />
             ))}
