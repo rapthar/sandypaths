@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Box, Text } from "@chakra-ui/react";
 
 const countries = [
     { name: 'France', places: 15, image: '/img/private.jpg' },
@@ -26,10 +27,12 @@ const PopularCountries = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 bg-black">
-      <h2 className="text-3xl font-bold text-center text-white mb-4">Popular Countries</h2>
-      <div className="h-0.5 w-12 bg-blue-500 mx-auto mb-8"></div>
+      <Box textAlign="left" mb="4">
+        <Text fontWeight="600" fontSize='2xl'>Popular Countries</Text>
+      </Box>
+      <div className="h-0.5 w-12 bg-blue-500 mb-8"></div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {countries.map((country, index) => (
           <CountryCard key={index} country={country} />
         ))}
