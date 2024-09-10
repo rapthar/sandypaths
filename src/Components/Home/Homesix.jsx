@@ -29,22 +29,33 @@ function Homesix() {
             </Text>
           </Box>
           <Flex 
-            w={{ base: "100%", md: "auto" }} 
-            maxW="500px" 
+            w="full"
+            maxW="833px" 
             bg="white" 
             borderRadius="full" 
             overflow="hidden"
+            h="54px"
           >
+            <Input
+              placeholder="Name"
+              border="none"
+              _focus={{ boxShadow: "none" }}
+              w="292px"
+              h="54px"
+            />
             <Input
               placeholder="Your email"
               border="none"
               _focus={{ boxShadow: "none" }}
-              flex="1"
+              w="418px"
+              h="54px"
             />
             <Button
               colorScheme="red"
               borderRadius="full"
-              px="8"
+              w="123.29px"
+              h="44px"
+              m="5px"
             >
               SUBSCRIBE
             </Button>
