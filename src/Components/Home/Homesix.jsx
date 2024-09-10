@@ -29,43 +29,46 @@ function Homesix() {
             </Text>
           </Box>
           <Flex 
-  w="full"
-  maxW="853px"
-  bg="white" 
-  borderRadius="full" 
-  overflow="hidden"
-  h="54px"
-  alignItems="center"
-  pl="6"
->
-  <Input
-    placeholder="Name"
-    border="none"
-    _focus={{ boxShadow: "none" }}
-    w="292px"
-    h="54px"
-    _placeholder={{ color: "gray.400" }}
-  />
-  <Box w="1px" h="24px" bg="gray.300" mx="2" />
-  <Input
-    placeholder="Your email"
-    border="none"
-    _focus={{ boxShadow: "none" }}
-    w="418px"
-    h="54px"
-    _placeholder={{ color: "gray.400" }}
-  />
-  <Button
-    colorScheme="red"
-    borderRadius="full"
-    w="123.29px"
-    h="44px"
-    ml="auto"
-    mr="5px"
-  >
-    SUBSCRIBE
-  </Button>
-</Flex>
+            w="full"
+            maxW="853px"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Input
+              placeholder="Your name"
+              bg="white"
+              borderRadius="full"
+              w="292px"
+              h="54px"
+              _placeholder={{ color: "gray.400" }}
+              mr="10px"
+            />
+            <Flex
+              bg="white"
+              borderRadius="full"
+              w="551px"
+              h="54px"
+              alignItems="center"
+              pl="6"
+              pr="5px"
+            >
+              <Input
+                placeholder="Your email"
+                border="none"
+                _focus={{ boxShadow: "none" }}
+                flex="1"
+                _placeholder={{ color: "gray.400" }}
+              />
+              <Button
+                colorScheme="green"
+                borderRadius="full"
+                w="123.29px"
+                h="44px"
+              >
+                SUBSCRIBE
+              </Button>
+            </Flex>
+          </Flex>
         </Flex>
       </Box>
     </Box>
