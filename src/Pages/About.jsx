@@ -78,7 +78,7 @@ const AboutPage = () => {
       {/* Become a Contributor */}
       <Box position="relative" height="300px" mt={12}>
         <Image
-          src="/api/placeholder/1200/300"
+          src="/img/private.jpg"
           alt="Beach landscape"
           objectFit="cover"
           width="100%"
