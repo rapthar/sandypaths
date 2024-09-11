@@ -13,7 +13,7 @@ const images = [
 
 function Homeeight() {
   return (
-    <Box bg="#0A59F7" w="100%" py={8}>
+    <Box bg="#1088A0" w="100%" py={8}>
       <Box maxW="6xl" mx="auto">
         <Flex justify="space-between" align="center" mb={6}>
           <Heading as="h2" size="3xl" color="white" fontWeight="bold">
