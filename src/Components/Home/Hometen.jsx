@@ -5,7 +5,15 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 const MainCard = ({ title, image }) => (
   <Box position="relative" borderRadius="xl" overflow="hidden" height="100%">
     <Image src={image} alt={title} objectFit="cover" w="100%" h="100%" />
-    <Box position="absolute" bottom="0" left="0" right="0" bg="rgba(0,0,0,0.6)" p={4} color="white">
+    <Box 
+      position="absolute" 
+      bottom="0" 
+      left="0" 
+      right="0" 
+      bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0))"
+      p={4} 
+      color="white"
+    >
       <Heading size="lg" mb={2}>{title}</Heading>
       <Link href="#" display="inline-flex" alignItems="center" fontSize="sm" fontWeight="bold">
         READ MORE <ChevronRightIcon ml={1} />
@@ -37,10 +45,13 @@ const TravelBlogSection = () => {
         </VStack>
         
         <Grid templateColumns={{ base: "1fr", lg: "3fr 2fr" }} gap={8}>
-          <MainCard 
-            title="Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches" 
-            image="/img/romantic.jpg"
-          />
+          <VStack align="stretch" spacing={4}>
+            <Heading size="xl">Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches</Heading>
+            <MainCard 
+              title=""  // Title moved outside
+              image="/img/romantic.jpg"
+            />
+          </VStack>
           <VStack spacing={8} align="stretch">
             <SideCard 
               title="Asia's Thrilling Adventures: Hiking, Trekking, and More" 
