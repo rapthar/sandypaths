@@ -13,7 +13,7 @@ const images = [
 
 function Homeeight() {
   return (
-    <Box bg="blue.500" pt="30px" w="100%" py={8}>
+    <Box bg="blue.500" pt="70px" w="100%" py={8}>
       <Box maxW="6xl" mx="auto">
         <Flex justify="space-between" align="center" mb={6}>
           <Heading as="h2" size="2xl" color="white">
@@ -29,16 +29,16 @@ function Homeeight() {
             </Flex>
           </Flex>
         </Flex>
-        <Flex overflowX="auto" pb={4}>
-          {images.map((image, index) => (
-            <Box key={index} minW="300px" mr={4} position="relative">
-              <Image src={image.src} alt={`Travel image ${index + 1}`} w="260px" h="260px" objectFit="cover" />
-              <Text position="absolute" bottom={2} left={2} color="white" fontSize="sm">
-                {image.credit}
-              </Text>
-            </Box>
-          ))}
-        </Flex>
+        <Flex justifyContent="space-between" w="100%">
+  {images.map((image, index) => (
+    <Box key={index} position="relative">
+      <Image src={image.src} alt={`Travel image ${index + 1}`} w="239px" h="302px" objectFit="cover" />
+      <Text position="absolute" bottom={2} left={2} color="white" fontSize="sm">
+        {image.credit}
+      </Text>
+    </Box>
+  ))}
+</Flex>
       </Box>
     </Box>
   )
