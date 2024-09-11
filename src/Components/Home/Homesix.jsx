@@ -60,7 +60,7 @@ function Homesix() {
                 _placeholder={{ color: "gray.400" }}
               />
               <Button
-                colorScheme="red"
+                colorScheme="#1088A0"
                 borderRadius="full"
                 w="123.29px"
                 h="44px"
