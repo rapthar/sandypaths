@@ -4,7 +4,7 @@ import { Box, Grid, Heading, Text, Image, VStack, HStack, Center } from '@chakra
 const InfoCard = ({ title, description, icon }) => (
   <Box bg="white" p={6} borderRadius="lg" boxShadow="sm" height="100%">
     <VStack spacing={4} align="center">
-      <Image src={`/icons/${icon}`} alt={title} boxSize="100px" /> {/* Doubled from 50px to 100px */}
+      <Image src={`/icons/${icon}`} alt={title} boxSize="100px" />
       <Heading size="md" fontWeight="semibold" textAlign="center">{title}</Heading>
       <Text fontSize="sm" color="gray.600" textAlign="center">{description}</Text>
       <Text color="orange.400" fontSize="sm" fontWeight="medium">
@@ -24,7 +24,7 @@ const TravelInfoGrid = () => {
     {
       title: "Coastal Cuisine Delights",
       description: "Savor fresh seafood and local specialties at the best beachside restaurants across America.",
-      icon: "seafood.png",
+      icon: "sea-food.png",
     },
     {
       title: "Top US Beach Destinations",
@@ -44,13 +44,13 @@ const TravelInfoGrid = () => {
   ];
 
   return (
-    <Box bg="gray.50" py={8}>
+    <Box bg="gray.50" pt="40px" pb={8}> {/* Changed py={8} to pt="40px" pb={8} */}
       <Center>
         <Box maxWidth="1200px" width="100%" px={4}>
           <Grid templateColumns={["1fr", "1fr", "repeat(3, 1fr)"]} gap={8}>
             <Box p={6} height="100%" display="flex" alignItems="center">
               <VStack align="start" spacing={2}>
-                <Heading size="xl" fontWeight="bold">Complete Beach</Heading>
+                <Heading size="xl" fontWeight="bold">Complete USA Beach</Heading>
                 <Heading size="xl" fontWeight="bold">Travel Information</Heading>
                 <HStack spacing={1}>
                   {[...Array(6)].map((_, i) => (
