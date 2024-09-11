@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Text, Input, Button, HStack, Link, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, Text, Input, Button, HStack, Link, SimpleGrid, Image } from '@chakra-ui/react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaPinterest } from 'react-icons/fa';
 
 const Footer = () => {
@@ -7,26 +7,26 @@ const Footer = () => {
     <Box as="footer" bg="white" py={8} px={4}>
       <Flex maxW="1200px" mx="auto" flexWrap="wrap" justifyContent="flex-start">
         <Box flexBasis={['100%', '100%', '25%']} mb={8}>
-          <Text fontSize="2xl" fontWeight="bold" color="blue.500" mb={4}>
-            lonely planet
-          </Text>
-          <Text fontSize="sm" mb={4}>For Explorers Everywhere</Text>
-          <Text fontWeight="bold" mb={2}>FOLLOW US</Text>
-          <HStack spacing={3}>
-            <Link href="#"><FaFacebook /></Link>
-            <Link href="#"><FaInstagram /></Link>
-            <Link href="#"><FaTwitter /></Link>
-            <Link href="#"><FaYoutube /></Link>
-            <Link href="#"><FaPinterest /></Link>
-          </HStack>
+          <Box textAlign="center">
+            <Image src="/lonely-planet-logo.png" alt="Lonely Planet" mb={4} mx="auto" />
+            <Text fontSize="sm" mb={4}>For Explorers Everywhere</Text>
+            <Text fontWeight="bold" mb={2}>FOLLOW US</Text>
+            <HStack spacing={3} justifyContent="center">
+              <Link href="#"><FaFacebook /></Link>
+              <Link href="#"><FaInstagram /></Link>
+              <Link href="#"><FaTwitter /></Link>
+              <Link href="#"><FaYoutube /></Link>
+              <Link href="#"><FaPinterest /></Link>
+            </HStack>
+          </Box>
           <Text fontWeight="bold" mt={4} mb={2}>SUBSCRIBE</Text>
-          <Text mb={2}>Get 20% off your first order.</Text>
+          <Text mb={2}>Sandy inspiration delivered directly to your inbox.</Text>
           <form>
             <Input placeholder="Email address" mb={2} />
             <Button colorScheme="blue" width="100%">Subscribe now</Button>
           </form>
           <Text fontSize="xs" mt={2}>
-            Subscribe to Lonely Planet newsletters and promotions.<br />
+            Subscribe to Sandy Paths newsletters and promotions.<br />
             Read our Privacy Policy.
           </Text>
         </Box>
@@ -55,9 +55,9 @@ const Footer = () => {
           </Box>
         </SimpleGrid>
       </Flex>
-      <Box borderTop="1px solid" borderColor="gray.200" mt={8} pt={4}>
+      <Box bg="#1088A0" mt={8} py={4}>
         <Flex maxW="1200px" mx="auto" justifyContent="space-between" alignItems="center" flexWrap="wrap">
-          <Text fontSize="xs">© 2024 Lonely Planet, a Red Ventures company. All rights reserved. No part of this site may be reproduced without our written permission.</Text>
+          <Text fontSize="xs" color="white">© 2024 Sandy Paths, a Ultra Hive Media company. All rights reserved. No part of this site may be reproduced without our written permission.</Text>
           <Box>
             <select>
               <option>English</option>
