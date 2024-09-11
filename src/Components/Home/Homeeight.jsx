@@ -13,29 +13,38 @@ const images = [
 
 function Homeeight() {
   return (
-    <Box bg="blue.500" pt="70px" w="100%" py={8}>
+    <Box bg="#0A59F7" w="100%" py={8}>
       <Box maxW="6xl" mx="auto">
         <Flex justify="space-between" align="center" mb={6}>
-          <Heading as="h2" size="2xl" color="white">
+          <Heading as="h2" size="3xl" color="white" fontWeight="bold">
             #sandypaths
           </Heading>
           <Flex align="center">
-            <Text color="white" mr={4}>FOLLOW SANDYPATHS:</Text>
+            <Text color="white" mr={4} fontWeight="bold">FOLLOW SANDYPATHS:</Text>
             <Flex>
-              <Icon as={FaFacebookF} color="white" w={6} h={6} mr={2} />
-              <Icon as={FaInstagram} color="white" w={6} h={6} mr={2} />
-              <Icon as={FaTwitter} color="white" w={6} h={6} mr={2} />
+              <Icon as={FaFacebookF} color="white" w={6} h={6} mr={3} />
+              <Icon as={FaInstagram} color="white" w={6} h={6} mr={3} />
+              <Icon as={FaTwitter} color="white" w={6} h={6} mr={3} />
               <Icon as={FaTiktok} color="white" w={6} h={6} />
             </Flex>
           </Flex>
         </Flex>
-        <Flex justifyContent="space-between" w="100%">
+        <Flex>
           {images.map((image, index) => (
-            <Box key={index} position="relative" w="calc(16.666% - 8px)">
-              <Image src={image.src} alt={`Travel image ${index + 1}`} w="100%" h="302px" objectFit="cover" />
-              <Text position="absolute" bottom={2} left={2} color="white" fontSize="sm">
-                {image.credit}
-              </Text>
+            <Box key={index} position="relative" flex="1" mr={index < images.length - 1 ? 2 : 0}>
+              <Image src={image.src} alt={`Travel image ${index + 1}`} w="100%" h="300px" objectFit="cover" />
+              <Box 
+                position="absolute" 
+                bottom={0} 
+                left={0} 
+                right={0} 
+                bg="linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))"
+                p={2}
+              >
+                <Text color="white" fontSize="sm" fontWeight="bold">
+                  {image.credit}
+                </Text>
+              </Box>
             </Box>
           ))}
         </Flex>
