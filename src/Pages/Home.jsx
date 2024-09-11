@@ -9,6 +9,7 @@ import Homesix from '../Components/Home/Homesix'
 import Homethree from '../Components/Home/Homethree'
 import Hometwo from '../Components/Home/Hometwo'
 import Homenine from '../Components/Home/Homenine'
+import Hometen from '../Components/Home/Hometen'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <Homesix />
       <Homeseven />
       <Homeeight />
+      <Hometen />
     </Box>
   )
 }
