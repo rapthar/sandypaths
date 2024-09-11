@@ -22,8 +22,8 @@ const Home = () => {
       <Homefive />
       <Homesix />
       <Homeseven />
-      <Homeeight />
       <Hometen />
+      <Homeeight />
     </Box>
   )
 }
