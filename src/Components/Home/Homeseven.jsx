@@ -2,7 +2,7 @@ import { Box, Image, Text, Button } from "@chakra-ui/react";
 
 function Homeseven() {
     return (
-        <Box maxW="1142px" mx="auto" mt="40px" mb="40px">
+        <Box maxW="1142px" mx="auto" mt="40px" mb="60px">
             <Box h="506px" position="relative" borderRadius="xl" overflow="hidden">
                 <Image
                     src="/img/even-hotel-chongli-even.jpg"
