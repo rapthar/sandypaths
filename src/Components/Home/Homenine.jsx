@@ -44,7 +44,7 @@ const TravelInfoGrid = () => {
   ];
 
   return (
-    <Box bg="gray.50" pt="40px" pb={8}> {/* Changed py={8} to pt="40px" pb={8} */}
+    <Box bg="gray.50" pt="40px" pb={8} mt="50px"> {/* Added mt="50px" */}
       <Center>
         <Box maxWidth="1200px" width="100%" px={4}>
           <Grid templateColumns={["1fr", "1fr", "repeat(3, 1fr)"]} gap={8}>
