@@ -29,7 +29,7 @@ const Footer = () => {
           <form>
             <Input placeholder="Email address" mb={2} />
             <Button 
-              bg="#CFAD89" 
+              bg="#1088A0" 
               color="white" 
               width="100%" 
               _hover={{ bg: "#1088A0" }}
@@ -45,7 +45,7 @@ const Footer = () => {
         <SimpleGrid columns={[1, 2, 3]} spacing={8} flexBasis={['100%', '100%', '75%']}>
           <Box>
             <Text fontWeight="bold" mb={2}>TOP DESTINATIONS</Text>
-            {['New York City', 'Paris', 'Italy', 'Costa Rica', 'Japan', 'USA', 'Amsterdam', 'Portugal', 'Cancún', 'Chicago', 'England', 'Tokyo', 'France', 'Thailand', 'Ireland', 'Rome', 'London', 'Los Angeles', 'Mexico', 'San Francisco', 'Explore More Destinations'].map((item) => (
+            {['New York City', 'Paris', 'Italy', 'Costa Rica', 'Japan', 'USA', 'Amsterdam', 'Portugal', 'Cancún',].map((item) => (
               <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
           </Box>
@@ -56,7 +56,7 @@ const Footer = () => {
             ))}
           </Box>
           <Box>
-            <Text fontWeight="bold" mt={4} mb={2}>ABOUT US</Text>
+            <Text fontWeight="bold" mb={2}>ABOUT US</Text>
             {['About Lonely Planet', 'Contact Us', 'Trade and Advertising', 'Privacy Policy', 'Terms and Conditions', 'Work For Us', 'Write For Us', 'Sitemap', 'Consumer Health Data Privacy Policy', 'Cookie Settings', 'Do Not Sell or Share My Personal Information'].map((item) => (
               <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
