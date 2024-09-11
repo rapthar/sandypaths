@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Grid, Heading, Text, Image, VStack, HStack, Flex, Center } from '@chakra-ui/react';
+import { Box, Grid, Heading, Text, Image, VStack, HStack, Center } from '@chakra-ui/react';
 
 const InfoCard = ({ title, description, icon }) => (
   <Box bg="white" p={6} borderRadius="lg" boxShadow="sm" height="100%">
     <VStack spacing={4} align="center">
-      <Image src={`/public/icon/${icon}`} alt={title} boxSize="50px" />
+      <Image src={`/icons/${icon}`} alt={title} boxSize="50px" />
       <Heading size="md" fontWeight="semibold" textAlign="center">{title}</Heading>
       <Text fontSize="sm" color="gray.600" textAlign="center">{description}</Text>
       <Text color="orange.400" fontSize="sm" fontWeight="medium">
@@ -44,14 +44,14 @@ const TravelInfoGrid = () => {
   ];
 
   return (
-    <Box bg="gray.50" py={16}>
+    <Box bg="gray.50" py={8}>
       <Center>
-        <Box maxWidth="1200px" px={4}>
-          <VStack spacing={8} align="stretch">
-            <Box mt="30px">
-              <VStack align="center" spacing={2} mb={8}>
-                <Heading size="xl" fontWeight="bold" textAlign="center">Complete USA Beach</Heading>
-                <Heading size="xl" fontWeight="bold" textAlign="center">Travel Information</Heading>
+        <Box maxWidth="1200px" width="100%" px={4}>
+          <Grid templateColumns={["1fr", "1fr", "1fr 1fr 1fr"]} gap={8}>
+            <Box display="flex" alignItems="center" justifyContent="center" py={8}>
+              <VStack align="start" spacing={2}>
+                <Heading size="xl" fontWeight="bold">Complete USA Beach</Heading>
+                <Heading size="xl" fontWeight="bold">Travel Information</Heading>
                 <HStack spacing={1}>
                   {[...Array(6)].map((_, i) => (
                     <Box key={i} w="8px" h="8px" borderRadius="full" bg="orange.400" />
@@ -59,17 +59,14 @@ const TravelInfoGrid = () => {
                 </HStack>
               </VStack>
             </Box>
-            <Grid templateColumns={["1fr", "1fr", "1fr 1fr 1fr"]} gap={8}>
-              <Box></Box>
-              <InfoCard {...infoCards[0]} />
-              <InfoCard {...infoCards[1]} />
-            </Grid>
-            <Flex justify="center" flexWrap="wrap" gap={8}>
-              <Box width={["100%", "45%", "30%"]}><InfoCard {...infoCards[2]} /></Box>
-              <Box width={["100%", "45%", "30%"]}><InfoCard {...infoCards[3]} /></Box>
-              <Box width={["100%", "45%", "30%"]}><InfoCard {...infoCards[4]} /></Box>
-            </Flex>
-          </VStack>
+            <InfoCard {...infoCards[0]} />
+            <InfoCard {...infoCards[1]} />
+          </Grid>
+          <Grid templateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr"]} gap={8} mt={8}>
+            <InfoCard {...infoCards[2]} />
+            <InfoCard {...infoCards[3]} />
+            <InfoCard {...infoCards[4]} />
+          </Grid>
         </Box>
       </Center>
     </Box>
