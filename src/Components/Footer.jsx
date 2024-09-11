@@ -56,10 +56,6 @@ const Footer = () => {
             ))}
           </Box>
           <Box>
-            <Text fontWeight="bold" mb={2}>SHOP</Text>
-            {['Destination Guides', 'Lonely Planet Kids', 'Lonely Planet Shop', 'Non-English Guides'].map((item) => (
-              <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
-            ))}
             <Text fontWeight="bold" mt={4} mb={2}>ABOUT US</Text>
             {['About Lonely Planet', 'Contact Us', 'Trade and Advertising', 'Privacy Policy', 'Terms and Conditions', 'Work For Us', 'Write For Us', 'Sitemap', 'Consumer Health Data Privacy Policy', 'Cookie Settings', 'Do Not Sell or Share My Personal Information'].map((item) => (
               <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
