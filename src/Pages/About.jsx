@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Heading, Text, Image, VStack, HStack, Button, Input, Flex, SimpleGrid, Icon } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
-const AboutPage = () => {
+export default function AboutPage() {
   return (
     <Box>
       {/* Hero Section */}
@@ -114,6 +114,4 @@ const AboutPage = () => {
       </HStack>
     </Box>
   );
-};
-
-export default AboutPage;
+}
