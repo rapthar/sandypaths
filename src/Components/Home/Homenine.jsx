@@ -4,7 +4,7 @@ import { Box, Grid, Heading, Text, Image, VStack, HStack, Center } from '@chakra
 const InfoCard = ({ title, description, icon }) => (
   <Box bg="white" p={6} borderRadius="lg" boxShadow="sm" height="100%">
     <VStack spacing={4} align="center">
-      <Image src={`/icons/${icon}`} alt={title} boxSize="50px" />
+      <Image src={`/public/icons/${icon}`} alt={title} boxSize="50px" />
       <Heading size="md" fontWeight="semibold" textAlign="center">{title}</Heading>
       <Text fontSize="sm" color="gray.600" textAlign="center">{description}</Text>
       <Text color="orange.400" fontSize="sm" fontWeight="medium">
@@ -47,9 +47,9 @@ const TravelInfoGrid = () => {
     <Box bg="gray.50" py={8}>
       <Center>
         <Box maxWidth="1200px" width="100%" px={4}>
-          <Grid templateColumns={["1fr", "1fr", "1fr 1fr 1fr"]} gap={8}>
-            <Box display="flex" alignItems="center" justifyContent="center" py={8}>
-              <VStack align="start" spacing={2}>
+          <Grid templateColumns={["1fr", "1fr", "repeat(3, 1fr)"]} gap={8}>
+            <Box bg="white" p={6} borderRadius="lg" boxShadow="sm" height="100%">
+              <VStack align="start" spacing={2} justify="center" height="100%">
                 <Heading size="xl" fontWeight="bold">Complete USA Beach</Heading>
                 <Heading size="xl" fontWeight="bold">Travel Information</Heading>
                 <HStack spacing={1}>
@@ -61,8 +61,6 @@ const TravelInfoGrid = () => {
             </Box>
             <InfoCard {...infoCards[0]} />
             <InfoCard {...infoCards[1]} />
-          </Grid>
-          <Grid templateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr"]} gap={8} mt={8}>
             <InfoCard {...infoCards[2]} />
             <InfoCard {...infoCards[3]} />
             <InfoCard {...infoCards[4]} />
