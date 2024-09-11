@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Heading, Text, Image, VStack, HStack, Link } from '@chakra-ui/react';
+import { Box, Grid, Heading, Text, Image, VStack, HStack, Link, Flex } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
 const MainCard = ({ title, image }) => (
@@ -40,15 +40,17 @@ const TravelBlogSection = () => {
     <Box bg="#F5F7FB" py={8}>
       <Box maxWidth="1200px" margin="auto" px={4}>
         <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} alignItems="start">
-          <VStack align="start" spacing={4}>
+          <VStack align="start" spacing={4} pt={8}> {/* Added padding top */}
             <Heading size="2xl" fontWeight="bold">Read Our Latest Travel Blog & Tips Here</Heading>
             <Text color="gray.600">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et.</Text>
-            <Box width="100%" height="auto" aspectRatio={16 / 9}>
-              <MainCard 
-                title="Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches"
-                image="/img/romantic.jpg"
-              />
-            </Box>
+            <Flex direction="column" justify="flex-end" height="100%">
+              <Box width="100%" pb={4}>
+                <MainCard 
+                  title="Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches"
+                  image="/img/romantic.jpg"
+                />
+              </Box>
+            </Flex>
           </VStack>
           <VStack spacing={8} align="stretch">
             <SideCard 
