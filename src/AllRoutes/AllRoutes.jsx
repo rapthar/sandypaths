@@ -1,7 +1,7 @@
 import {Routes, Route} from "react-router-dom";
 import Home from "../Pages/Home";
 import Hotel from "../Pages/Hotel";
-import Hotel from "../Pages/About";
+import About from "../Pages/About";
 
 function AllRoutes(){
     return <Routes>
