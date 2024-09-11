@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { Box, Heading, Text, VStack, Button, Input, Flex, SimpleGrid, Container } from '@chakra-ui/react'
 
 export default function AboutPage() {
@@ -7,11 +6,15 @@ export default function AboutPage() {
     <Box>
       {/* Hero Section */}
       <Box position="relative" height="300px">
-        <Image
+        <img
           src="/img/group-of-friends-enjoying-a-picnic-on-the-beach-.jpeg"
           alt="Beach scene with people"
-          layout="fill"
-          objectFit="cover"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            position: 'absolute',
+          }}
         />
         <Box
           position="absolute"
@@ -82,11 +85,15 @@ export default function AboutPage() {
 
       {/* Become a Contributor */}
       <Box position="relative" height="300px">
-        <Image
+        <img
           src="/img/private.jpg"
           alt="Beach landscape"
-          layout="fill"
-          objectFit="cover"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            position: 'absolute',
+          }}
         />
         <Box
           position="absolute"
