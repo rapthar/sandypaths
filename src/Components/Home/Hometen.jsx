@@ -37,21 +37,21 @@ const SideCard = ({ title, description, image }) => (
 
 const TravelBlogSection = () => {
   return (
-    <Box bg="#F5F7FB" py={8}>
+    <Box bg="#F5F7FB" py="30px">
       <Box maxWidth="1200px" margin="auto" px={4}>
         <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} alignItems="start">
-          <VStack align="start" spacing={4} pt={8}> {/* Added padding top */}
-            <Heading size="2xl" fontWeight="bold">Read Our Latest Travel Blog & Tips Here</Heading>
-            <Text color="gray.600">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et.</Text>
-            <Flex direction="column" justify="flex-end" height="100%">
-              <Box width="100%" pb={4}>
-                <MainCard 
-                  title="Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches"
-                  image="/img/romantic.jpg"
-                />
-              </Box>
-            </Flex>
-          </VStack>
+          <Flex direction="column" justify="space-between" height="100%">
+            <VStack align="start" spacing={4} pt={8}>
+              <Heading size="2xl" fontWeight="bold">Read Our Latest Travel Blog & Tips Here</Heading>
+              <Text color="gray.600">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et.</Text>
+            </VStack>
+            <Box width="100%" mt={8}>
+              <MainCard 
+                title="Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches"
+                image="/img/romantic.jpg"
+              />
+            </Box>
+          </Flex>
           <VStack spacing={8} align="stretch">
             <SideCard 
               title="Asia's Thrilling Adventures: Hiking, Trekking, and More" 
