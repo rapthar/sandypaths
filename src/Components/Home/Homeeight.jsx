@@ -32,7 +32,7 @@ function Homeeight() {
         <Flex overflowX="auto" pb={4}>
           {images.map((image, index) => (
             <Box key={index} minW="300px" mr={4} position="relative">
-              <Image src={image.src} alt={`Travel image ${index + 1}`} w="300px" h="300px" objectFit="cover" />
+              <Image src={image.src} alt={`Travel image ${index + 1}`} w="200px" h="200px" objectFit="cover" />
               <Text position="absolute" bottom={2} left={2} color="white" fontSize="sm">
                 {image.credit}
               </Text>
