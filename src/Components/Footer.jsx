@@ -28,7 +28,14 @@ const Footer = () => {
           <Text mb={2}>Sandy inspiration delivered directly to your inbox.</Text>
           <form>
             <Input placeholder="Email address" mb={2} />
-            <Button colorScheme="blue" width="100%">Subscribe now</Button>
+            <Button 
+              bg="#CFAD89" 
+              color="white" 
+              width="100%" 
+              _hover={{ bg: "#BF9D79" }}
+            >
+              Subscribe now
+            </Button>
           </form>
           <Text fontSize="xs" mt={2}>
             Subscribe to Sandy Paths newsletters and promotions.<br />
