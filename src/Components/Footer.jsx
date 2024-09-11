@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Flex, Text, Input, Button, VStack, HStack, Link, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, Text, Input, Button, HStack, Link, SimpleGrid } from '@chakra-ui/react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaPinterest } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <Box as="footer" bg="white" py={8} px={4}>
-      <Flex maxW="1200px" mx="auto" flexWrap="wrap">
+      <Flex maxW="1200px" mx="auto" flexWrap="wrap" justifyContent="flex-start">
         <Box flexBasis={['100%', '100%', '25%']} mb={8}>
           <Text fontSize="2xl" fontWeight="bold" color="blue.500" mb={4}>
             lonely planet
@@ -31,28 +31,28 @@ const Footer = () => {
           </Text>
         </Box>
         <SimpleGrid columns={[1, 2, 3]} spacing={8} flexBasis={['100%', '100%', '75%']}>
-          <VStack align="flex-start">
+          <Box>
             <Text fontWeight="bold" mb={2}>TOP DESTINATIONS</Text>
             {['New York City', 'Paris', 'Italy', 'Costa Rica', 'Japan', 'USA', 'Amsterdam', 'Portugal', 'Cancún', 'Chicago', 'England', 'Tokyo', 'France', 'Thailand', 'Ireland', 'Rome', 'London', 'Los Angeles', 'Mexico', 'San Francisco', 'Explore More Destinations'].map((item) => (
-              <Link key={item} href="#" fontSize="sm">{item}</Link>
+              <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
-          </VStack>
-          <VStack align="flex-start">
+          </Box>
+          <Box>
             <Text fontWeight="bold" mb={2}>TRAVEL INTERESTS</Text>
             {['Adventure Travel', 'Art and Culture', 'Beaches, Coasts and Islands', 'Family Holidays', 'Festivals', 'Food and Drink', 'Honeymoon and Romance', 'Road Trips', 'Sustainable Travel', 'Travel on a Budget', 'Wildlife and Nature'].map((item) => (
-              <Link key={item} href="#" fontSize="sm">{item}</Link>
+              <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
-          </VStack>
-          <VStack align="flex-start">
+          </Box>
+          <Box>
             <Text fontWeight="bold" mb={2}>SHOP</Text>
             {['Destination Guides', 'Lonely Planet Kids', 'Lonely Planet Shop', 'Non-English Guides'].map((item) => (
-              <Link key={item} href="#" fontSize="sm">{item}</Link>
+              <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
             <Text fontWeight="bold" mt={4} mb={2}>ABOUT US</Text>
             {['About Lonely Planet', 'Contact Us', 'Trade and Advertising', 'Privacy Policy', 'Terms and Conditions', 'Work For Us', 'Write For Us', 'Sitemap', 'Consumer Health Data Privacy Policy', 'Cookie Settings', 'Do Not Sell or Share My Personal Information'].map((item) => (
-              <Link key={item} href="#" fontSize="sm">{item}</Link>
+              <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
-          </VStack>
+          </Box>
         </SimpleGrid>
       </Flex>
       <Box borderTop="1px solid" borderColor="gray.200" mt={8} pt={4}>
