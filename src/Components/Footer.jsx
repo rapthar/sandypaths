@@ -32,7 +32,7 @@ const Footer = () => {
               bg="#CFAD89" 
               color="white" 
               width="100%" 
-              _hover={{ bg: "#BF9D79" }}
+              _hover={{ bg: "#1088A0" }}
             >
               Subscribe now
             </Button>
