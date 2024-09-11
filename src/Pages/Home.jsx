@@ -8,13 +8,13 @@ import Homeseven from '../Components/Home/Homeseven'
 import Homesix from '../Components/Home/Homesix'
 import Homethree from '../Components/Home/Homethree'
 import Hometwo from '../Components/Home/Hometwo'
-import Hometwo from '../Components/Home/Homenine'
+import Homenine from '../Components/Home/Homenine'
 
 const Home = () => {
   return (
     <Box>
       <Homeone />
-      <Homenine/>
+      <Homenine />
       <Hometwo />
       <Homethree />
       <Homefour />
