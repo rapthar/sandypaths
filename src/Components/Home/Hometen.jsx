@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Heading, Text, Image, VStack, Link } from '@chakra-ui/react';
+import { Box, Grid, Heading, Text, Image, VStack, HStack, Link } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
 const MainCard = ({ title, image }) => (
@@ -15,14 +15,16 @@ const MainCard = ({ title, image }) => (
 );
 
 const SideCard = ({ title, description, image }) => (
-  <Box>
-    <Image src={image} alt={title} objectFit="cover" w="100%" h="150px" borderRadius="xl" mb={2} />
-    <Heading size="md" mb={1}>{title}</Heading>
-    <Text fontSize="sm" color="gray.600" noOfLines={2} mb={2}>{description}</Text>
-    <Link href="#" fontSize="sm" fontWeight="bold" display="inline-flex" alignItems="center">
-      READ MORE <ChevronRightIcon ml={1} />
-    </Link>
-  </Box>
+  <HStack spacing={4} align="start">
+    <Image src={image} alt={title} objectFit="cover" w="180px" h="120px" borderRadius="xl" />
+    <VStack align="start" spacing={1} flex={1}>
+      <Heading size="md">{title}</Heading>
+      <Text fontSize="sm" color="gray.600" noOfLines={2}>{description}</Text>
+      <Link href="#" fontSize="sm" fontWeight="bold" display="inline-flex" alignItems="center">
+        READ MORE <ChevronRightIcon ml={1} />
+      </Link>
+    </VStack>
+  </HStack>
 );
 
 const TravelBlogSection = () => {
