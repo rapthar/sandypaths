@@ -8,8 +8,8 @@ const Footer = () => {
       <Flex maxW="1200px" mx="auto" flexWrap="wrap" justifyContent="flex-start">
         <Box flexBasis={['100%', '100%', '25%']} mb={8}>
           <Box textAlign="center">
-            <Image src="/lonely-planet-logo.png" alt="Lonely Planet" mb={4} mx="auto" />
-            <Text fontSize="sm" mb={4}>For Explorers Everywhere</Text>
+            <Image src="/img/sandypathlogo.png" alt="Sandy Paths" mb={4} mx="auto" />
+            <Text fontSize="sm" mb={4}>Wow! Worthy Adventures</Text>
             <Text fontWeight="bold" mb={2}>FOLLOW US</Text>
             <HStack spacing={3} justifyContent="center">
               <Link href="#"><FaFacebook /></Link>
