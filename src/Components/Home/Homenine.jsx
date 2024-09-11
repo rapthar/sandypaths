@@ -50,7 +50,7 @@ const TravelInfoGrid = () => {
           <Grid templateColumns={["1fr", "1fr", "repeat(3, 1fr)"]} gap={8}>
             <Box p={6} height="100%" display="flex" alignItems="center">
               <VStack align="start" spacing={2}>
-                <Heading size="xl" fontWeight="bold">Complete USA Beach</Heading>
+                <Heading size="xl" fontWeight="bold">Complete Beach</Heading>
                 <Heading size="xl" fontWeight="bold">Travel Information</Heading>
                 <HStack spacing={1}>
                   {[...Array(6)].map((_, i) => (
