@@ -45,7 +45,7 @@ const Footer = () => {
         <SimpleGrid columns={[1, 2, 3]} spacing={8} flexBasis={['100%', '100%', '75%']}>
           <Box>
             <Text fontWeight="bold" mb={2}>TOP DESTINATIONS</Text>
-            {['New York City', 'Paris', 'Italy', 'Costa Rica', 'Japan', 'USA', 'Amsterdam', 'Portugal', 'Cancún',].map((item) => (
+            {['New York City', 'Paris', 'Italy', 'Costa Rica', 'Japan', 'USA', 'Amsterdam', 'Portugal', 'Cancún', 'Chicago', 'England',].map((item) => (
               <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
           </Box>
