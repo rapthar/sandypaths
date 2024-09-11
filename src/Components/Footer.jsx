@@ -57,7 +57,7 @@ const Footer = () => {
           </Box>
           <Box>
             <Text fontWeight="bold" mb={2}>ABOUT US</Text>
-            {['About Sandy Paths', 'Contact Us', 'Trade and Advertising', 'Privacy Policy', 'Terms and Conditions', 'Work For Us', 'Write For Us', 'Sitemap', 'Consumer Health Data Privacy Policy', 'Cookie Settings', 'Do Not Sell or Share My Personal Information'].map((item) => (
+            {['About Sandy Paths', 'Contact Us', 'Trade and Advertising', 'Privacy Policy', 'Terms and Conditions', 'Write For Us', 'Sitemap', 'Consumer Health Data Privacy Policy', 'Cookie Settings', 'Do Not Sell or Share My Personal Information'].map((item) => (
               <Text key={item} fontSize="sm" mb={1}><Link href="#">{item}</Link></Text>
             ))}
           </Box>
