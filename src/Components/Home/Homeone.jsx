@@ -4,7 +4,7 @@ import { Box, Input, Heading, Text, VStack, Container, Flex, Button } from "@cha
 
 function Homeone() {
   return (
-    <Box position="relative" height="100vh" overflow="hidden">
+    <Box position="relative" height="100vh" overflow="hidden" bg="#193F50">
       {/* Background Image */}
       <Box
         position="absolute"
@@ -12,17 +12,18 @@ function Homeone() {
         left="0"
         right="0"
         bottom="0"
-        backgroundImage="url(@hidden-gem.jpg)"
+        backgroundImage="url('https://source.unsplash.com/random/1600x900/?beach')"
         backgroundSize="cover"
         backgroundPosition="center"
         filter="brightness(0.7)"
+        zIndex="0"
       />
 
       {/* Content Overlay */}
-      <Container maxW="container.xl" height="100%" position="relative">
+      <Container maxW="container.xl" height="100%" position="relative" zIndex="1">
         <Flex height="100%" alignItems="center" justifyContent="space-between">
           {/* Left side content */}
-          <VStack align="flex-start" spacing={6} maxW="50%" color="white">
+          <VStack align="flex-start" spacing={6} maxW={["100%", "100%", "50%"]} color="white">
             <Heading as="h1" size="3xl" fontWeight="bold" lineHeight="1.2">
               Discover Your Perfect Beach
             </Heading>
@@ -54,7 +55,7 @@ function Homeone() {
             </Box>
 
             <Button
-              colorScheme="white"
+              colorScheme="whiteAlpha"
               variant="outline"
               size="lg"
               mt={4}
@@ -65,7 +66,7 @@ function Homeone() {
           </VStack>
 
           {/* Right side - empty space to match layout */}
-          <Box flexBasis="40%" />
+          <Box flexBasis={["0%", "0%", "40%"]} display={["none", "none", "block"]} />
         </Flex>
       </Container>
 
@@ -78,6 +79,7 @@ function Homeone() {
         bottom={0}
         opacity={0.1}
         pointerEvents="none"
+        zIndex="0"
       >
         {[...Array(5)].map((_, i) => (
           <Box
