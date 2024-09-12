@@ -31,7 +31,7 @@ export default function AboutPage() {
           color="white"
         >
           <Heading size="2xl" mb={2}>About Us</Heading>
-          <Text>For explorers everywhere.</Text>
+          <Text>Wow! Worthy Adventures.</Text>
         </Box>
       </Box>
 
