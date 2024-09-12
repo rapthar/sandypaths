@@ -1,5 +1,6 @@
+import React from 'react';
 import { SearchIcon } from "@chakra-ui/icons";
-import { Box, Input, Heading, Text, VStack, Container, Flex } from "@chakra-ui/react";
+import { Box, Input, Heading, Text, VStack, Container, Flex, Button } from "@chakra-ui/react";
 
 function Homeone() {
   return (
@@ -22,11 +23,14 @@ function Homeone() {
         <Flex height="100%" alignItems="center" justifyContent="space-between">
           {/* Left side content */}
           <VStack align="flex-start" spacing={6} maxW="50%" color="white">
-            <Heading as="h1" size="3xl" fontWeight="bold">
+            <Heading as="h1" size="3xl" fontWeight="bold" lineHeight="1.2">
               Discover Your Perfect Beach
             </Heading>
             <Text fontSize="xl">
               Explore the world's most beautiful coastlines with SandyPaths
+            </Text>
+            <Text fontSize="2xl" fontWeight="bold">
+              Save up to 50% – book your dream trip now!
             </Text>
             
             {/* Search Form */}
@@ -48,12 +52,47 @@ function Homeone() {
                 _focus={{ boxShadow: 'none' }}
               />
             </Box>
+
+            <Button
+              colorScheme="white"
+              variant="outline"
+              size="lg"
+              mt={4}
+              _hover={{ bg: 'white', color: '#193F50' }}
+            >
+              Book Now →
+            </Button>
           </VStack>
 
           {/* Right side - empty space to match layout */}
           <Box flexBasis="40%" />
         </Flex>
       </Container>
+
+      {/* Decorative lines */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        opacity={0.1}
+        pointerEvents="none"
+      >
+        {[...Array(5)].map((_, i) => (
+          <Box
+            key={i}
+            position="absolute"
+            top={`${20 * i}%`}
+            left={0}
+            width="100%"
+            height="1px"
+            bg="white"
+            transform={`rotate(${10 + i * 5}deg)`}
+            transformOrigin="left"
+          />
+        ))}
+      </Box>
     </Box>
   );
 }
