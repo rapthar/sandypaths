@@ -1,74 +1,68 @@
 import React from 'react';
-import { SearchIcon } from "@chakra-ui/icons";
-import { Box, Input, Heading, Text, VStack, Container, Flex, Button } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
 function Homeone() {
   return (
-    <Box position="relative" height="100vh" overflow="hidden" bg="#193F50">
-      {/* Background Image */}
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        backgroundImage="url('https://source.unsplash.com/random/1600x900/?beach')"
-        backgroundSize="cover"
-        backgroundPosition="center"
-        filter="brightness(0.7)"
-        zIndex="0"
-      />
-
-      {/* Content Overlay */}
-      <Container maxW="container.xl" height="100%" position="relative" zIndex="1">
-        <Flex height="100%" alignItems="center" justifyContent="space-between">
-          {/* Left side content */}
-          <VStack align="flex-start" spacing={6} maxW={["100%", "100%", "50%"]} color="white">
-            <Heading as="h1" size="3xl" fontWeight="bold" lineHeight="1.2">
-              Discover Your Perfect Beach
+    <Box borderRadius="xl" overflow="hidden" bg="#FFF5EE" p={4}>
+      <Flex borderRadius="xl" overflow="hidden" bg="#E27B60" position="relative">
+        {/* Left column */}
+        <Box width="50%" p={8} color="white">
+          <VStack align="flex-start" spacing={4}>
+            <Heading as="h1" size="2xl" fontWeight="bold" lineHeight={1.2}>
+              Explore our Wondersome Adventures
             </Heading>
-            <Text fontSize="xl">
-              Explore the world's most beautiful coastlines with SandyPaths
-            </Text>
-            <Text fontSize="2xl" fontWeight="bold">
+            <Text fontSize="md">
               Save up to 50% – book your dream trip now!
             </Text>
-            
-            {/* Search Form */}
-            <Box 
-              display="flex" 
-              rounded="full" 
-              bg="white" 
-              p="8px 20px" 
-              w="100%" 
-              alignItems="center" 
-              boxShadow='xl'
-            >
-              <SearchIcon w={5} h={5} color="#193F50" />
-              <Input 
-                border="none" 
-                placeholder='Where to?' 
-                size='lg' 
-                _placeholder={{ color: 'gray.500' }}
-                _focus={{ boxShadow: 'none' }}
-              />
-            </Box>
-
             <Button
-              colorScheme="whiteAlpha"
-              variant="outline"
-              size="lg"
-              mt={4}
-              _hover={{ bg: 'white', color: '#193F50' }}
+              bg="white"
+              color="#E27B60"
+              size="md"
+              borderRadius="md"
+              fontWeight="bold"
+              _hover={{ bg: "gray.100" }}
             >
               Book Now →
             </Button>
           </VStack>
+        </Box>
 
-          {/* Right side - empty space to match layout */}
-          <Box flexBasis={["0%", "0%", "40%"]} display={["none", "none", "block"]} />
-        </Flex>
-      </Container>
+        {/* Curved divider */}
+        <Box
+          position="absolute"
+          top={0}
+          bottom={0}
+          left="45%"
+          width="10%"
+          bg="#E27B60"
+          zIndex={1}
+        >
+          <Box
+            position="absolute"
+            top={0}
+            bottom={0}
+            right={0}
+            width="100%"
+            bg="#FFF5EE"
+            borderTopLeftRadius="full"
+            borderBottomLeftRadius="full"
+          />
+        </Box>
+
+        {/* Right column (image placeholder) */}
+        <Box width="50%" position="relative">
+          <Box
+            position="absolute"
+            top={0}
+            right={0}
+            bottom={0}
+            left={0}
+            bg="url('/img/private.jpg')"
+            bgSize="cover"
+            bgPosition="center"
+          />
+        </Box>
+      </Flex>
 
       {/* Decorative lines */}
       <Box
@@ -79,7 +73,6 @@ function Homeone() {
         bottom={0}
         opacity={0.1}
         pointerEvents="none"
-        zIndex="0"
       >
         {[...Array(5)].map((_, i) => (
           <Box
@@ -90,7 +83,7 @@ function Homeone() {
             width="100%"
             height="1px"
             bg="white"
-            transform={`rotate(${10 + i * 5}deg)`}
+            transform={`rotate(${5 + i * 2}deg)`}
             transformOrigin="left"
           />
         ))}
