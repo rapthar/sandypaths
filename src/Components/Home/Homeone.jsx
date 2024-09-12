@@ -1,65 +1,62 @@
-import React from 'react'
-import { Box, Heading, Text, Button, Flex, Container } from "@chakra-ui/react"
-import { ArrowForwardIcon } from "@chakra-ui/icons"
+import { SearchIcon } from "@chakra-ui/icons";
+import { Box, Input, Heading, Text } from "@chakra-ui/react";
 
 function Homeone() {
-  return (
-    <Container maxW="container.xl" py={8}>
-      <Box
-        borderRadius="2xl"
-        overflow="hidden"
-        position="relative"
-        height="400px"
-        bg="linear-gradient(to right, #e17055, #fab1a0)"
-      >
-        <Flex height="100%">
-          {/* Left side content */}
-          <Box
-            width="50%"
-            p={12}
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            color="white"
-          >
-            <Heading as="h1" size="3xl" fontWeight="bold" mb={4} lineHeight="1.2">
-              Explore our Wondersome Adventures
-            </Heading>
-            <Text fontSize="xl" mb={6}>
-              Save up to 50% – book your dream trip now!
-            </Text>
-            <Button
-              rightIcon={<ArrowForwardIcon />}
-              colorScheme="white"
-              variant="outline"
-              alignSelf="flex-start"
-              _hover={{ bg: 'white', color: '#e17055' }}
-            >
-              Book Now
-            </Button>
-          </Box>
+	return (
+		<Box 
+			w="85%" 
+			m="auto" 
+			p="150px 100px" 
+			position="relative"
+			backgroundImage='url(https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp)'
+			backgroundSize="cover"
+			backgroundPosition="center"
+		>
+			{/* Black overlay */}
+			<Box 
+				position="absolute"
+				top="0"
+				left="0"
+				right="0"
+				bottom="0"
+				bg="rgba(0, 0, 0, 0.5)"
+			/>
 
-          {/* Right side image */}
-          <Box
-            width="50%"
-            backgroundImage="url('src/Components/Home/Homefour.jsx')"
-            backgroundSize="cover"
-            backgroundPosition="center"
-          />
-        </Flex>
-
-        {/* Curved overlay */}
-        <Box
-          position="absolute"
-          top={0}
-          left="45%"
-          right={0}
-          bottom={0}
-          bg="linear-gradient(to left bottom, transparent 50%, #fab1a0 50%)"
-        />
-      </Box>
-    </Container>
-  )
+			{/* Content */}
+			<Box position="relative" zIndex="1">
+				<Heading
+					as="h1"
+					size="2xl"
+					color="white"
+					mb={4}
+					textAlign="center"
+				>
+					Discover Your Perfect Beach
+				</Heading>
+				<Text
+					fontSize="xl"
+					color="white"
+					mb={8}
+					textAlign="center"
+				>
+					Explore the world's most beautiful coastlines with SandyPaths
+				</Text>
+				<Box 
+					display="flex" 
+					rounded="40px" 
+					bg="white" 
+					p="8px 20px" 
+					w="85%" 
+					m="auto" 
+					alignItems="center" 
+					boxShadow='3xl'
+				>
+					<SearchIcon w={5} h={5} color="#193F50" />
+					<Input border="none" placeholder='Where to?' size='lg' />
+				</Box>
+			</Box>
+		</Box>
+	)
 }
 
-export default Homeone
+export default Homeone;
