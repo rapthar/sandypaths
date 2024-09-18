@@ -23,36 +23,35 @@ const CategoryCard = ({ title, places, color, image }) => (
       boxShadow: "xl",
     }}
   >
-    {image && (
-      <Image
-        src={image}
-        alt={title}
-        objectFit="cover"
-        w="100%"
-        h="100%"
+    <Box position="relative" w="100%" h="100%" overflow="hidden">
+      {image && (
+        <Image
+          src={image}
+          alt={title}
+          objectFit="cover"
+          w="100%"
+          h="100%"
+          transition="all 0.3s ease-in-out"
+          _groupHover={{
+            transform: "scale(1.1)",
+          }}
+        />
+      )}
+      <Box 
+        position="absolute" 
+        bottom="0" 
+        left="0" 
+        right="0" 
+        p={4}
+        bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0))"
+        zIndex="1"
         transition="all 0.3s ease-in-out"
-        _groupHover={{
-          transform: "scale(1.1)",
-        }}
-      />
-    )}
-    <Box 
-      position="absolute" 
-      bottom="0" 
-      left="0" 
-      right="0" 
-      p={4}
-      bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0))"
-      zIndex="1"
-      transition="all 0.3s ease-in-out"
-      _groupHover={{
-        transform: "translateY(-5px)",
-      }}
-    >
-      <Heading as="h3" size="md" fontWeight="bold" mb={1}>
-        {title}
-      </Heading>
-      <Text>{places} places</Text>
+      >
+        <Heading as="h3" size="md" fontWeight="bold" mb={1}>
+          {title}
+        </Heading>
+        <Text>{places} places</Text>
+      </Box>
     </Box>
   </Box>
 )
