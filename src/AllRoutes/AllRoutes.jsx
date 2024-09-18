@@ -10,6 +10,7 @@ import Sitemap from "../Pages/Sitemap";
 import DataPrivacy from "../Pages/DataPrivacy";
 import Cookies from "../Pages/Cookies";
 import PersonalInfo from "../Pages/PersonalInfo";
+import AdminDashboard from "../components/AdminDashboard";
 
 function AllRoutes(){
     return <Routes>
@@ -24,6 +25,7 @@ function AllRoutes(){
         <Route path="/data-privacy" element={<DataPrivacy />} ></Route>
         <Route path="/cookies" element={<Cookies />} ></Route>
         <Route path="/personal-info" element={<PersonalInfo />} ></Route>
+        <Route path="/admin-dashboard" element={<AdminDashboard />} ></Route>
     </Routes>
 }
 
