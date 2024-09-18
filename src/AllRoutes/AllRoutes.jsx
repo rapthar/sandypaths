@@ -10,7 +10,7 @@ import Sitemap from "../Pages/Sitemap";
 import DataPrivacy from "../Pages/DataPrivacy";
 import Cookies from "../Pages/Cookies";
 import PersonalInfo from "../Pages/PersonalInfo";
-import AdminDashboard from "../Components/AdminDashboard";
+import AdminDashboard from "../components/AdminDashboard";
 
 function AllRoutes(){
     return <Routes>

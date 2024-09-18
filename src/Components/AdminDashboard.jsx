@@ -18,7 +18,7 @@ const subOptions = [
 
 export default function SandyPathsDashboard() {
   const [activeTab, setActiveTab] = useState('dashboard')
-  const [expandedType, setExpandedType] = useState<string | null>(null)
+  const [expandedType, setExpandedType] = useState(null)
 
   const renderContent = () => {
     switch (activeTab) {
@@ -120,7 +120,7 @@ function DashboardContent() {
   )
 }
 
-function WaterBodyContent({ type }: { type: string }) {
+function WaterBodyContent({ type }) {
   const typeInfo = waterBodyTypes.find(t => t.name.toLowerCase() === type)
   const Icon = typeInfo?.icon || Droplet
 
@@ -220,4 +220,11 @@ function SettingsContent() {
           <input id="site-name" className="w-full p-2 border rounded" defaultValue="Sandy Paths" />
         </div>
         <div>
-          <label htmlFor="
+          <label htmlFor="site-description" className="block text-sm font-medium text-gray-700 mb-1">Site Description</label>
+          <input id="site-description" className="w-full p-2 border rounded" placeholder="Enter your site description..." />
+        </div>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Save Settings</button>
+      </form>
+    </div>
+  )
+}
