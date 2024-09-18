@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
-import { palmtree-island-sun, droplets, waves, ship, fish, anchor, mountain, umbrella } from 'lucide-react';
+import { palmtree-island-sun, droplets, waves, ship, fish, anchor, mountain, umbrella } from 'lucide-react'
 
 const waterBodyTypes = [
   { name: "Beaches", icon: palmtree-island-sun },
