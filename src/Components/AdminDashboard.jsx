@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
-import { palmtree-island-sun, droplets, waves, ship, fish, anchor, mountain } from 'lucide-react'
+import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Waves, Users, Clock, ArrowUpDown } from 'lucide-react'
+import { Palmtree, Ship, Fish, Anchor, Mountain } from 'lucide-react'
 
 const waterBodyTypes = [
-  { name: "Beaches", icon: palmtree-island-sun },
-  { name: "Lakes", icon: droplets },
-  { name: "Rivers", icon: waves },
-  { name: "Bays", icon: ship },
-  { name: "Lagoons", icon: fish },
-  { name: "Estuaries", icon: anchor },
-  { name: "Coves", icon: mountain },
-  { name: "Sand bars", icon: umbrella }
+  { name: "Beaches", icon: Palmtree },
+  { name: "Lakes", icon: Droplet },
+  { name: "Rivers", icon: Waves },
+  { name: "Bays", icon: Ship },
+  { name: "Lagoons", icon: Fish },
+  { name: "Estuaries", icon: Anchor },
+  { name: "Coves", icon: Mountain },
+  { name: "Sand bars", icon: Umbrella }
 ];
 
 const subOptions = [
