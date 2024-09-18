@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Waves, Users, Clock, ArrowUpDown } from 'lucide-react'
+import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, MapPin, Building, Map, BarChart, ChevronDown, Waves, Users, Clock, ArrowUpDown } from 'lucide-react'
 import { Palmtree, Ship, Fish, Anchor, Mountain } from 'lucide-react'
+import { Image } from "@chakra-ui/react"  // Add this import
 
 const waterBodyTypes = [
   { name: "Beaches", icon: Palmtree },
@@ -39,10 +40,13 @@ export default function SandyPathsDashboard() {
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-md">
         <div className="p-4">
-          <h1 className="text-2xl font-bold text-blue-600 flex items-center">
-            <Umbrella className="mr-2 h-6 w-6" />
-            Sandy Paths
-          </h1>
+          <Image
+            src="/sandypathlogo.png"
+            alt="SandyPaths.com"
+            height="45px"
+            width="auto"
+            objectFit="contain"
+          />
         </div>
         <nav className="mt-4">
           <a href="#" onClick={() => setActiveTab('dashboard')} className={`flex items-center py-2 px-4 text-gray-700 hover:bg-blue-100 ${activeTab === 'dashboard' ? 'bg-blue-100' : ''}`}>
@@ -88,7 +92,14 @@ export default function SandyPathsDashboard() {
         <div className="max-w-4xl mx-auto">
           <header className="mb-8">
             <h2 className="text-3xl font-bold text-gray-800 flex items-center">
-              <Umbrella className="mr-2 h-8 w-8 text-blue-600" />
+              <Image
+                src="/sandypathlogo.png"
+                alt="SandyPaths.com"
+                height="32px"
+                width="auto"
+                objectFit="contain"
+                className="mr-2"
+              />
               Sandy Paths Dashboard
             </h2>
           </header>
