@@ -46,7 +46,6 @@ const CategoryCard = ({ title, places, color, image }) => (
       zIndex="1"
       transition="all 0.3s ease-in-out"
       _groupHover={{
-        bgGradient: "linear(to-t, rgba(0,0,0,0.9), rgba(0,0,0,0.1))",
         transform: "translateY(-5px)",
       }}
     >
