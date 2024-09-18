@@ -1,9 +1,4 @@
 import React, { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Wave, Water, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
 
 const waterBodyTypes = [
@@ -54,17 +49,18 @@ export default function SandyPathsDashboard() {
             Dashboard
           </a>
           {waterBodyTypes.map(type => (
-            <Collapsible key={type.name} open={expandedType === type.name} onOpenChange={() => setExpandedType(expandedType === type.name ? null : type.name)}>
-              <CollapsibleTrigger className="w-full">
-                <a href="#" onClick={() => setActiveTab(type.name.toLowerCase())} className={`flex items-center justify-between py-2 px-4 text-gray-700 hover:bg-blue-100 ${activeTab === type.name.toLowerCase() ? 'bg-blue-100' : ''}`}>
-                  <span className="flex items-center">
-                    <type.icon className="mr-2 h-4 w-4" />
-                    {type.name}
-                  </span>
-                  <ChevronDown className={`h-4 w-4 transition-transform ${expandedType === type.name ? 'transform rotate-180' : ''}`} />
-                </a>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
+            <div key={type.name}>
+              <a href="#" onClick={() => {
+                setActiveTab(type.name.toLowerCase())
+                setExpandedType(expandedType === type.name ? null : type.name)
+              }} className={`flex items-center justify-between py-2 px-4 text-gray-700 hover:bg-blue-100 ${activeTab === type.name.toLowerCase() ? 'bg-blue-100' : ''}`}>
+                <span className="flex items-center">
+                  <type.icon className="mr-2 h-4 w-4" />
+                  {type.name}
+                </span>
+                <ChevronDown className={`h-4 w-4 transition-transform ${expandedType === type.name ? 'transform rotate-180' : ''}`} />
+              </a>
+              {expandedType === type.name && (
                 <div className="pl-8 pr-4 py-2 space-y-2">
                   {subOptions.map(option => (
                     <a key={option} href="#" className="block text-sm text-gray-600 hover:text-blue-600">
@@ -72,8 +68,8 @@ export default function SandyPathsDashboard() {
                     </a>
                   ))}
                 </div>
-              </CollapsibleContent>
-            </Collapsible>
+              )}
+            </div>
           ))}
           <a href="#" onClick={() => setActiveTab('analytics')} className={`flex items-center py-2 px-4 text-gray-700 hover:bg-blue-100 ${activeTab === 'analytics' ? 'bg-blue-100' : ''}`}>
             <BarChart className="mr-2 h-4 w-4" />
@@ -105,28 +101,22 @@ export default function SandyPathsDashboard() {
 
 function DashboardContent() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Welcome to Sandy Paths CMS</CardTitle>
-        <CardDescription>Manage your water body listings from one central location.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {waterBodyTypes.map(type => (
-            <Card key={type.name}>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">{type.name}</CardTitle>
-                <type.icon className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">0</div>
-                <p className="text-xs text-muted-foreground">Total {type.name.toLowerCase()} listed</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <h3 className="text-xl font-semibold mb-4">Welcome to Sandy Paths CMS</h3>
+      <p className="text-gray-600 mb-6">Manage your water body listings from one central location.</p>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {waterBodyTypes.map(type => (
+          <div key={type.name} className="bg-gray-50 p-4 rounded-md">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-medium">{type.name}</span>
+              <type.icon className="h-4 w-4 text-gray-400" />
+            </div>
+            <div className="text-2xl font-bold">0</div>
+            <p className="text-xs text-gray-500">Total {type.name.toLowerCase()} listed</p>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -135,132 +125,99 @@ function WaterBodyContent({ type }: { type: string }) {
   const Icon = typeInfo?.icon || Droplet
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center">
-          <Icon className="mr-2 h-5 w-5" />
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </CardTitle>
-        <CardDescription>Manage {type.toLowerCase()} listings here.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex justify-between mb-4">
-          <div className="relative">
-            <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
-            <Input className="pl-8 w-64" placeholder={`Search ${type.toLowerCase()}...`} />
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="flex items-center mb-4">
+        <Icon className="mr-2 h-5 w-5" />
+        <h3 className="text-xl font-semibold">{type.charAt(0).toUpperCase() + type.slice(1)}</h3>
+      </div>
+      <p className="text-gray-600 mb-6">Manage {type.toLowerCase()} listings here.</p>
+      <div className="flex justify-between mb-4">
+        <div className="relative">
+          <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
+          <input className="pl-8 w-64 p-2 border rounded" placeholder={`Search ${type.toLowerCase()}...`} />
+        </div>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded flex items-center">
+          <PlusCircle className="mr-2 h-4 w-4" /> Add New {type.slice(0, -1)}
+        </button>
+      </div>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {subOptions.map(option => (
+          <div key={option} className="bg-gray-50 p-4 rounded-md">
+            <h4 className="text-sm font-semibold mb-2">{option.replace('[Place Type]', type.slice(0, -1))}</h4>
+            <p className="text-xs text-gray-500">Manage {option.toLowerCase()} for {type.toLowerCase()}</p>
           </div>
-          <Button>
-            <PlusCircle className="mr-2 h-4 w-4" /> Add New {type.slice(0, -1)}
-          </Button>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {subOptions.map(option => (
-            <Card key={option}>
-              <CardHeader>
-                <CardTitle className="text-sm">{option.replace('[Place Type]', type.slice(0, -1))}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-xs text-muted-foreground">Manage {option.toLowerCase()} for {type.toLowerCase()}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+        ))}
+      </div>
+    </div>
   )
 }
 
 function AnalyticsContent() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center">
-          <BarChart className="mr-2 h-5 w-5" />
-          Analytics
-        </CardTitle>
-        <CardDescription>View and manage your site analytics.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          <div>
-            <Label htmlFor="analytics-id">Google Analytics ID</Label>
-            <Input id="analytics-id" placeholder="UA-XXXXXXXXX-X" />
-          </div>
-          <Button>Save Analytics Settings</Button>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="flex items-center mb-4">
+        <BarChart className="mr-2 h-5 w-5" />
+        <h3 className="text-xl font-semibold">Analytics</h3>
+      </div>
+      <p className="text-gray-600 mb-6">View and manage your site analytics.</p>
+      <div className="space-y-4 mb-8">
+        <div>
+          <label htmlFor="analytics-id" className="block text-sm font-medium text-gray-700 mb-1">Google Analytics ID</label>
+          <input id="analytics-id" className="w-full p-2 border rounded" placeholder="UA-XXXXXXXXX-X" />
         </div>
-        <div className="mt-8">
-          <h3 className="text-lg font-semibold mb-4">Analytics Overview</h3>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Page Views</CardTitle>
-                <BarChart className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">45,231</div>
-                <p className="text-xs text-muted-foreground">+20.1% from last month</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Unique Visitors</CardTitle>
-                <Users className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">20,513</div>
-                <p className="text-xs text-muted-foreground">+10.5% from last month</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Avg. Time on Site</CardTitle>
-                <Clock className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">2m 35s</div>
-                <p className="text-xs text-muted-foreground">-0.3% from last month</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Bounce Rate</CardTitle>
-                <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">42.3%</div>
-                <p className="text-xs text-muted-foreground">-2.1% from last month</p>
-              </CardContent>
-            </Card>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded">Save Analytics Settings</button>
+      </div>
+      <h4 className="text-lg font-semibold mb-4">Analytics Overview</h4>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="bg-gray-50 p-4 rounded-md">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium">Page Views</span>
+            <BarChart className="h-4 w-4 text-gray-400" />
           </div>
+          <div className="text-2xl font-bold">45,231</div>
+          <p className="text-xs text-gray-500">+20.1% from last month</p>
         </div>
-      </CardContent>
-    </Card>
+        <div className="bg-gray-50 p-4 rounded-md">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium">Unique Visitors</span>
+            <Users className="h-4 w-4 text-gray-400" />
+          </div>
+          <div className="text-2xl font-bold">20,513</div>
+          <p className="text-xs text-gray-500">+10.5% from last month</p>
+        </div>
+        <div className="bg-gray-50 p-4 rounded-md">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium">Avg. Time on Site</span>
+            <Clock className="h-4 w-4 text-gray-400" />
+          </div>
+          <div className="text-2xl font-bold">2m 35s</div>
+          <p className="text-xs text-gray-500">-0.3% from last month</p>
+        </div>
+        <div className="bg-gray-50 p-4 rounded-md">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium">Bounce Rate</span>
+            <ArrowUpDown className="h-4 w-4 text-gray-400" />
+          </div>
+          <div className="text-2xl font-bold">42.3%</div>
+          <p className="text-xs text-gray-500">-2.1% from last month</p>
+        </div>
+      </div>
+    </div>
   )
 }
 
 function SettingsContent() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center">
-          <Settings className="mr-2 h-5 w-5" />
-          Settings
-        </CardTitle>
-        <CardDescription>Manage your Sandy Paths CMS settings.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form className="space-y-4">
-          <div>
-            <Label htmlFor="site-name">Site Name</Label>
-            <Input id="site-name" defaultValue="Sandy Paths" />
-          </div>
-          <div>
-            <Label htmlFor="site-description">Site Description</Label>
-            <Input id="site-description" placeholder="Enter your site description..." />
-          </div>
-          <Button type="submit">Save Settings</Button>
-        </form>
-      </CardContent>
-    </Card>
-  )
-}
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="flex items-center mb-4">
+        <Settings className="mr-2 h-5 w-5" />
+        <h3 className="text-xl font-semibold">Settings</h3>
+      </div>
+      <p className="text-gray-600 mb-6">Manage your Sandy Paths CMS settings.</p>
+      <form className="space-y-4">
+        <div>
+          <label htmlFor="site-name" className="block text-sm font-medium text-gray-700 mb-1">Site Name</label>
+          <input id="site-name" className="w-full p-2 border rounded" defaultValue="Sandy Paths" />
+        </div>
+        <div>
+          <label htmlFor="
