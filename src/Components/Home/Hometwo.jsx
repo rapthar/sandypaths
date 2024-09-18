@@ -17,6 +17,11 @@ const CategoryCard = ({ title, places, color, image }) => (
     overflow="hidden"
     w="267px"
     h="269px"
+    transition="all 0.3s ease-in-out"
+    _hover={{
+      transform: "scale(1.05)",
+      boxShadow: "xl",
+    }}
   >
     {image && (
       <Image
@@ -25,6 +30,10 @@ const CategoryCard = ({ title, places, color, image }) => (
         objectFit="cover"
         w="100%"
         h="100%"
+        transition="all 0.3s ease-in-out"
+        _groupHover={{
+          transform: "scale(1.1)",
+        }}
       />
     )}
     <Box 
@@ -35,6 +44,11 @@ const CategoryCard = ({ title, places, color, image }) => (
       p={4}
       bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0))"
       zIndex="1"
+      transition="all 0.3s ease-in-out"
+      _groupHover={{
+        bgGradient: "linear(to-t, rgba(0,0,0,0.9), rgba(0,0,0,0.1))",
+        transform: "translateY(-5px)",
+      }}
     >
       <Heading as="h3" size="md" fontWeight="bold" mb={1}>
         {title}
@@ -61,7 +75,7 @@ function Hometwo() {
         mx="auto"
       >
         {categories.map((category, index) => (
-          <GridItem key={index}>
+          <GridItem key={index} role="group">
             <CategoryCard {...category} />
           </GridItem>
         ))}
