@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Wave, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
+import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
+import { palmTree, droplets, waves, ship, fish, anchor, mountain, umbrella } from 'lucide-react';
 
 const waterBodyTypes = [
-  { name: "Beaches", icon: Palmtree },
-  { name: "Lakes", icon: Droplet },
-  { name: "Rivers", icon: Waves },
-  { name: "Bays", icon: Wave },
-  { name: "Lagoons", icon: Droplet },
-  { name: "Estuaries", icon: Wave },
-  { name: "Coves", icon: Droplet },
-  { name: "Sand bars", icon: Wave }
-]
+  { name: "Beaches", icon: palmTree },
+  { name: "Lakes", icon: droplets },
+  { name: "Rivers", icon: waves },
+  { name: "Bays", icon: ship },
+  { name: "Lagoons", icon: fish },
+  { name: "Estuaries", icon: anchor },
+  { name: "Coves", icon: mountain },
+  { name: "Sand bars", icon: umbrella }
+];
 
 const subOptions = [
   "All", "Add New", "Types", "Categories", "Amenities", "Cities/Towns", "Neighborhoods", "States"
