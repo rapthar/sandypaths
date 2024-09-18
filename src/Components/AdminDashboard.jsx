@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, MapPin, Building, Map, BarChart, ChevronDown, Waves, Users, Clock, ArrowUpDown } from 'lucide-react'
-import { Palmtree, Ship, Fish, Anchor, Mountain } from 'lucide-react'
+import { Palmtree, Ship, Fish, Anchor, Mountain, Umbrella } from 'lucide-react'
 import { Image } from "@chakra-ui/react"  // Add this import
 
 const waterBodyTypes = [
