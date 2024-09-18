@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Wave, Water, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
+import { PlusCircle, Search, Home, FileText, Tag, Droplet, Settings, Umbrella, MapPin, Building, Map, BarChart, ChevronDown, Wave, Waves, Palmtree, Users, Clock, ArrowUpDown } from 'lucide-react'
 
 const waterBodyTypes = [
   { name: "Beaches", icon: Palmtree },
-  { name: "Lakes", icon: Water },
+  { name: "Lakes", icon: Droplet },
   { name: "Rivers", icon: Waves },
   { name: "Bays", icon: Wave },
   { name: "Lagoons", icon: Droplet },
   { name: "Estuaries", icon: Wave },
-  { name: "Coves", icon: Water },
+  { name: "Coves", icon: Droplet },
   { name: "Sand bars", icon: Wave }
 ]
 
