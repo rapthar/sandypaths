@@ -11,7 +11,7 @@ import DataPrivacy from "../Pages/DataPrivacy";
 import Cookies from "../Pages/Cookies";
 import PersonalInfo from "../Pages/PersonalInfo";
 import AdminDashboard from "../Components/AdminDashboard";
-import BeachListing from "../pages/BeachListing";
+import BeachListing from "../Pages/BeachListing";
 
 function AllRoutes(){
     return <Routes>
