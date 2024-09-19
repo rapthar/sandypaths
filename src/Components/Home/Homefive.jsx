@@ -10,47 +10,13 @@ const countries = [
   ];
 
   const CountryCard = ({ country }) => (
-    <Box 
-      borderRadius="lg" 
-      overflow="hidden" 
-      position="relative"
-      transition="transform 0.3s ease"
-      _hover={{ transform: 'translateY(-5px)' }}
-    >
-      <Image 
-        src={country.image} 
-        alt={country.name} 
-        objectFit="cover" 
-        h="100%" 
-        w="100%" 
-        transition="transform 0.3s ease"
-        _groupHover={{ transform: 'scale(1.05)' }}
-      />
-      <Box 
-        position="absolute" 
-        inset="0" 
-        bg="linear-gradient(to top, rgba(255,255,255,0.7) 0%, rgba(0,0,0,0) 50%)" 
-        transition="opacity 0.3s ease"
-        _groupHover={{ opacity: 0.8 }}
-      />
-      <Box 
-        position="absolute" 
-        top="4" 
-        left="4" 
-        bg="white/20" 
-        backdropFilter="blur(4px)" 
-        borderRadius="full" 
-        px="3" 
-        py="1"
-      >
+    <Box borderRadius="lg" overflow="hidden" position="relative">
+      <Image src={country.image} alt={country.name} objectFit="cover" h="100%" w="100%" />
+      <Box position="absolute" inset="0" bg="linear-gradient(to top, rgba(255,255,255,0.7) 0%, rgba(0,0,0,0) 50%)" />
+      <Box position="absolute" top="4" left="4" bg="white/20" backdropFilter="blur(4px)" borderRadius="full" px="3" py="1">
         <Text fontSize="sm" fontWeight="semibold" color="white">EUROPE</Text>
       </Box>
-      <Box 
-        position="absolute" 
-        bottom="4" 
-        left="4" 
-        color="white"
-      >
+      <Box position="absolute" bottom="4" left="4" color="white">
         <Text fontSize="2xl" fontWeight="bold">{country.name}</Text>
         <Text fontSize="sm">{country.places} places</Text>
       </Box>
@@ -71,16 +37,9 @@ const countries = [
           </Text>
           <Box h="2px" w="48px" bg="blue.500" mx="auto" mb={6}></Box>
           
-          <Box 
-            display="grid" 
-            gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} 
-            gap="6" 
-            h="363px"
-          >
+          <Box display="grid" gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap="6" h="363px">
             {countries.map((country, index) => (
-              <Box key={index} role="group">
-                <CountryCard country={country} />
-              </Box>
+              <CountryCard key={index} country={country} />
             ))}
           </Box>
           
@@ -94,8 +53,6 @@ const countries = [
                 bg={currentPage === page ? "red.500" : "gray.400"}
                 onClick={() => setCurrentPage(page)}
                 cursor="pointer"
-                transition="background-color 0.3s ease"
-                _hover={{ bg: currentPage === page ? "red.600" : "gray.500" }}
               />
             ))}
           </Flex>
