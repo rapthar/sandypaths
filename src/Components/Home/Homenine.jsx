@@ -7,7 +7,17 @@ const InfoCard = ({ title, description, icon }) => (
       <Image src={`/icons/${icon}`} alt={title} boxSize="100px" />
       <Heading size="md" fontWeight="semibold" textAlign="center">{title}</Heading>
       <Text fontSize="sm" color="gray.600" textAlign="center">{description}</Text>
-      <Text color="orange.400" fontSize="sm" fontWeight="medium">
+      <Text 
+        color="orange.400" 
+        fontSize="sm" 
+        fontWeight="medium"
+        transition="all 0.3s ease"
+        _hover={{
+          color: 'orange.600',
+          transform: 'translateX(5px)',
+        }}
+        cursor="pointer"
+      >
         • Read More
       </Text>
     </VStack>
