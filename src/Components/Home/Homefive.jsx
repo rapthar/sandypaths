@@ -32,9 +32,9 @@ const CountryCard = ({ country }) => (
     <Box 
       position="absolute" 
       inset="0" 
-      bg="linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%)"
+      bg="linear-gradient(to top, rgba(255,255,255,0.7) 0%, rgba(0,0,0,0) 50%)" 
       transition="opacity 0.3s ease"
-      _groupHover={{ opacity: 0.8 }}
+      _groupHover={{ opacity: 0.9 }}
     />
     <Box 
       position="absolute" 
@@ -46,7 +46,7 @@ const CountryCard = ({ country }) => (
       px="3" 
       py="1"
       transition="transform 0.3s ease"
-      _groupHover={{ transform: 'translateY(-5px)' }}
+      _groupHover={{ transform: 'translateY(-2px)' }}
     >
       <Text fontSize="sm" fontWeight="semibold" color="white">EUROPE</Text>
     </Box>
@@ -56,7 +56,7 @@ const CountryCard = ({ country }) => (
       left="4" 
       color="white"
       transition="transform 0.3s ease"
-      _groupHover={{ transform: 'translateY(-5px)' }}
+      _groupHover={{ transform: 'translateY(-2px)' }}
     >
       <Text fontSize="2xl" fontWeight="bold">{country.name}</Text>
       <Text fontSize="sm">{country.places} places</Text>
