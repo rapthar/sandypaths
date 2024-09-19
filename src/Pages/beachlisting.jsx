@@ -86,7 +86,7 @@ export default function BeachListing() {
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="md:w-1/2">
                   <p className="text-gray-600 mb-2">
-                    <strong>Address:</strong> 23000 Pacific Coast Hwy, Malibu, CA 90265
+                    <strong>Address:</strong> 23000 Pacific Coast Hwy, Malibu, CA 91265
                   </p>
                   <p className="text-gray-600 mb-4">
                     <strong>City:</strong> Malibu
