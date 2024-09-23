@@ -1,12 +1,12 @@
 import React from 'react'
 import { Star, Heart, Share, Umbrella, Sunrise, Sunset, Wind, Droplets, MapPin, ChevronRight, Search } from 'lucide-react'
-import { Button } from '../components/ui/button'
-import { Card, CardContent } from '../components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { Progress } from '../components/ui/progress'
+import { Progress } from '@/components/ui/progress'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Input } from '../components/ui/input'
+import { Input } from '@/components/ui/input'
 
 export default function BeachListing() {
   const weatherData = [
@@ -299,3 +299,86 @@ export default function BeachListing() {
                         <div>
                           <div className="font-semibold">{review.name}</div>
                           <div className="text-sm text-gray-500">{review.date}</div>
+                        </div>
+                      </div>
+                      <div className="flex mb-2">
+                        {[...Array(5)].map((_, starIndex) => (
+                          <Star key={starIndex} className={`w-4 h-4 ${starIndex < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                        ))}
+                      </div>
+                      <p className="text-gray-600">{review.comment}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="flex justify-center mt-6">
+                <Button variant="outline" size="sm" className="mx-1">1</Button>
+                <Button variant="outline" size="sm" className="mx-1">2</Button>
+                <Button variant="outline" size="sm" className="mx-1">3</Button>
+                <Button variant="outline" size="sm" className="mx-1">...</Button>
+                <Button variant="outline" size="sm" className="mx-1">8</Button>
+                <Button variant="outline" size="sm" className="mx-1">9</Button>
+                <Button variant="outline" size="sm" className="mx-1">10</Button>
+                <Button variant="outline" size="sm" className="mx-1">
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* FAQ */}
+            <div className="mb-8">
+              <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+              <Accordion type="single" collapsible className="w-full">
+                {[
+                  "Is Malibu Beach good for swimming?",
+                  "Are there lifeguards on duty?",
+                  "What amenities are available at the beach?",
+                  "Is parking available?",
+                  "Are dogs allowed on Malibu Beach?"
+                ].map((question, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger>{question}</AccordionTrigger>
+                    <AccordionContent>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="lg:w-1/3">
+            <Card className="sticky top-4">
+              <CardContent className="p-6">
+                <div className="text-3xl font-bold mb-4">Plan Your Visit</div>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <MapPin className="text-teal-600 mr-2" />
+                    <span>23000 Pacific Coast Hwy, Malibu, CA 90265</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Droplets className="text-teal-600 mr-2" />
+                    <span>Water Temperature: 68°F (20°C)</span>
+                  </div>
+                </div>
+                <Button className="w-full mt-4">Check Nearby Hotels</Button>
+                <p className="text-sm text-gray-500 mt-4">Tip: Book in advance during peak summer months</p>
+                <div className="space-y-2 text-sm mt-4">
+                  <div className="flex justify-between">
+                    <span>Beach safety guidelines</span>
+                    <ChevronRight className="text-teal-600" />
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Local attractions</span>
+                    <ChevronRight className="text-teal-600" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </main>
+    </div>
+  )
+}
